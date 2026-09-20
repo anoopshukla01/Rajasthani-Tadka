@@ -356,14 +356,14 @@ class TadkaRequestHandler(http.server.SimpleHTTPRequestHandler):
     })
 
 def run_server():
-    socketserver.TCPServer.allow_reuse_address = True
+    http.server.ThreadingHTTPServer.allow_reuse_address = True
     is_cloud_env = "PORT" in os.environ
     current_port = PORT
     max_attempts = 1 if is_cloud_env else 5
     
     for attempt in range(max_attempts):
         try:
-            with socketserver.TCPServer(("", current_port), TadkaRequestHandler) as httpd:
+            with http.server.ThreadingHTTPServer(("", current_port), TadkaRequestHandler) as httpd:
                 print(f"🌟 Rajasthani Tadka server running at http://0.0.0.0:{current_port}/")
                 httpd.serve_forever()
         except OSError as e:
