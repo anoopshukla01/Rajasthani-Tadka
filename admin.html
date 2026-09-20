@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Admin CMS — Rajasthani Tadka</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg" id="admin-page-favicon">
+  <link rel="stylesheet" href="css/style.css?v=3.0">
+  <style>
+    /* Admin Specific Luxury Dashboard Styles */
+    body {
+      background-color: #0C0908;
+      color: var(--c-sand-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-sans);
+    }
+
+    .admin-header {
+      background: #140E0C;
+      border-bottom: 1px solid rgba(198, 154, 72, 0.3);
+      padding: 1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      text-decoration: none;
+      color: #FFF;
+    }
+
+    .admin-logo-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      background: rgba(198, 154, 72, 0.1);
+      border: 1px solid rgba(198, 154, 72, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 4px;
+    }
+
+    .admin-logo-badge img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .admin-container {
+      max-width: 1360px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Auth Gate Card */
+    #auth-gate-card {
+      max-width: 460px;
+      margin: 5rem auto;
+      background: #15100E;
+      border: 1px solid rgba(198, 154, 72, 0.4);
+      border-radius: 8px;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+    }
+
+    /* Tabs Navigation */
+    .admin-nav-bar {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(198, 154, 72, 0.25);
+      margin-bottom: 2.2rem;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: thin;
+    }
+
+    .admin-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--c-sand-muted);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.25rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .admin-tab-btn:hover {
+      color: var(--c-gold-bright);
+      background: rgba(198, 154, 72, 0.06);
+    }
+
+    .admin-tab-btn.active {
+      color: var(--c-gold-bright);
+      border-bottom-color: var(--c-gold-bright);
+      background: rgba(198, 154, 72, 0.12);
+    }
+
+    /* Admin Cards */
+    .admin-card {
+      background: #14100E;
+      border: 1px solid rgba(198, 154, 72, 0.25);
+      border-radius: 6px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+    }
+
+    .admin-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(198, 154, 72, 0.15);
+      padding-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .admin-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--c-sand-light);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Form Inputs */
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: #0E0B0A;
+      border: 1px solid rgba(198, 154, 72, 0.3);
+      color: var(--c-sand-light);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--c-gold-bright);
+      box-shadow: 0 0 10px rgba(198, 154, 72, 0.25);
+    }
+
+    .form-input[readonly] {
+      background: #181412;
+      color: #9E9E9E;
+      cursor: not-allowed;
+    }
+
+    /* Admin Table */
+    .admin-table-wrap {
+      background: #110E0C;
+      border: 1px solid rgba(198, 154, 72, 0.2);
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .admin-table th {
+      background: #181311;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-gold-bright);
+      border-bottom: 1px solid rgba(198, 154, 72, 0.25);
+      white-space: nowrap;
+    }
+
+    .admin-table td {
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid rgba(198, 154, 72, 0.1);
+      font-size: 0.88rem;
+      vertical-align: middle;
+    }
+
+    .admin-table tr:hover td {
+      background: rgba(198, 154, 72, 0.04);
+    }
+
+    .table-thumb {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 1px solid rgba(198, 154, 72, 0.3);
+      display: block;
+    }
+
+    .btn-action-sm {
+      padding: 0.38rem 0.75rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 3px;
+      cursor: pointer;
+      border: 1px solid rgba(198, 154, 72, 0.4);
+      background: transparent;
+      color: var(--c-sand-light);
+      margin-right: 0.35rem;
+      transition: all 0.2s ease;
+    }
+    .btn-action-sm:hover {
+      background: var(--c-gold);
+      color: #000;
+    }
+    .btn-action-delete {
+      border-color: #C62828;
+      color: #EF9A9A;
+    }
+    .btn-action-delete:hover {
+      background: #C62828;
+      color: #FFF;
+    }
+
+    /* Modal / Form Dialog Styling */
+    dialog.admin-modal-card {
+      background: #14100E;
+      border: 1px solid rgba(198, 154, 72, 0.45);
+      border-radius: 8px;
+      padding: 2.2rem;
+      max-width: 740px;
+      width: 92vw;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.95);
+      margin: auto;
+      inset: 0;
+      color: var(--c-sand-light);
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Media Library Grid */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .media-item-card {
+      background: #16110F;
+      border: 1px solid rgba(198, 154, 72, 0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-item-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--c-gold-bright);
+    }
+
+    .media-item-preview {
+      width: 100%;
+      height: 125px;
+      object-fit: cover;
+      background: #0E0B0A;
+      display: block;
+      border-bottom: 1px solid rgba(198, 154, 72, 0.15);
+    }
+
+    .media-item-details {
+      padding: 0.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .media-item-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--c-sand-light);
+      word-break: break-all;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Drop Zone */
+    .upload-drop-zone {
+      border: 2px dashed rgba(198, 154, 72, 0.4);
+      border-radius: 6px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      background: rgba(198, 154, 72, 0.03);
+    }
+
+    .upload-drop-zone:hover, .upload-drop-zone.dragover {
+      border-color: var(--c-gold-bright);
+      background: rgba(198, 154, 72, 0.08);
+    }
+
+    /* Notification Toast */
+    .toast-notice {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #1B5E20;
+      color: #FFF;
+      padding: 1rem 1.8rem;
+      border-radius: 4px;
+      border: 1px solid #4CAF50;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+      z-index: 2000;
+      display: none;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Tag badges */
+    .tag-pill {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      border: 1px solid currentColor;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP ADMIN HEADER
+       ========================================================================= -->
+  <header class="admin-header">
+    <a href="index.html" class="admin-brand">
+      <div class="admin-logo-badge">
+        <img src="images/logo.svg" alt="Rajasthani Tadka" id="admin-header-logo-img">
+      </div>
+      <div>
+        <span style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.12em; display: block;" id="admin-header-title">
+          RAJASTHANI TADKA
+        </span>
+        <span style="font-family: var(--font-sans); font-size: 0.68rem; color: var(--c-gold); letter-spacing: 0.2em; font-weight: 600;">
+          ROYAL ADMINISTRATIVE CONTROL PORTAL
+        </span>
+      </div>
+    </a>
+
+    <div id="admin-user-controls" style="display: none; align-items: center; gap: 1rem;">
+      <a href="index.html" target="_blank" class="btn-gold-outline" style="padding: 0.5rem 1.1rem; font-size: 0.78rem; text-decoration: none; display: flex; align-items: center; gap: 0.4rem;">
+        <span>🌐</span> View Live Website &nearr;
+      </a>
+      <button id="btn-logout" class="btn-gold-outline" style="padding: 0.5rem 1.1rem; font-size: 0.78rem; border-color: #C62828; color: #EF9A9A; cursor: pointer;">
+        Log Out
+      </button>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="admin-toast" class="toast-notice">Changes saved live!</div>
+
+  <div class="admin-container">
+
+    <!-- =========================================================================
+         1. AUTH GATE (Shown when unauthenticated)
+         ========================================================================= -->
+    <div id="auth-gate-card">
+      <div style="width: 76px; height: 76px; margin: 0 auto 1.5rem;" class="admin-logo-badge">
+        <img src="images/logo.svg" alt="Royal Crest" id="gate-logo-img">
+      </div>
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--c-sand-light); margin-bottom: 0.6rem;">
+        Royal Access Gate
+      </h2>
+      <p style="font-family: var(--font-editorial); font-size: 1.05rem; color: var(--c-sand-muted); margin-bottom: 2rem;">
+        Enter administrative passphrase to manage live restaurant content, images, logo, dishes, and orders.
+      </p>
+
+      <form id="admin-login-form">
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <input type="password" id="admin-password" class="form-input" placeholder="Passphrase (default: admin123)" required style="text-align: center; font-size: 1.1rem; letter-spacing: 0.1em;">
+        </div>
+        <button type="submit" class="btn-gold-outline btn-gold-solid" style="width: 100%; padding: 0.85rem; font-size: 0.82rem; cursor: pointer;">
+          AUTHENTICATE & ENTER PORTAL
+        </button>
+      </form>
+      <div id="login-error" style="color: #EF9A9A; font-size: 0.85rem; margin-top: 1rem; display: none;"></div>
+    </div>
+
+    <!-- =========================================================================
+         2. MAIN DASHBOARD (Shown when authenticated)
+         ========================================================================= -->
+    <div id="admin-dashboard" style="display: none;">
+
+      <!-- Tab Navigation -->
+      <nav class="admin-nav-bar">
+        <button class="admin-tab-btn active" data-tab="tab-brand">👑 Brand & Logo</button>
+        <button class="admin-tab-btn" data-tab="tab-hero">✍️ Hero & Banners</button>
+        <button class="admin-tab-btn" data-tab="tab-story">📜 Heritage Story</button>
+        <button class="admin-tab-btn" data-tab="tab-dishes">🍲 Menu Dishes (<span id="dishes-count">0</span>)</button>
+        <button class="admin-tab-btn" data-tab="tab-categories">🗂️ Categories</button>
+        <button class="admin-tab-btn" data-tab="tab-gallery">🖼️ Ambience Gallery</button>
+        <button class="admin-tab-btn" data-tab="tab-reviews">💬 Customer Reviews</button>
+        <button class="admin-tab-btn" data-tab="tab-restaurant">📍 Contact & Timings</button>
+        <button class="admin-tab-btn" data-tab="tab-media">📁 Media Library</button>
+        <button class="admin-tab-btn" data-tab="tab-reservations">📋 Bookings (<span id="res-count">0</span>)</button>
+        <button class="admin-tab-btn" data-tab="tab-settings">⚙️ Settings & Backup</button>
+      </nav>
+
+      <!-- =======================================================================
+           TAB 1: BRAND IDENTITY & LOGO UPLOAD
+           ======================================================================= -->
+      <section id="tab-brand" class="admin-tab-content">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">👑 Brand Identity & Official Logo</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Upload the royal brand logo. It automatically updates the website header, hero crest, scrollytelling arrival seal, closing seal, and footer.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 320px 1fr; gap: 2.5rem; align-items: start;">
+            <!-- Logo Preview & Upload Box -->
+            <div style="background: #100C0B; border: 1px solid rgba(198,154,72,0.3); border-radius: 6px; padding: 1.5rem; text-align: center;">
+              <span class="form-label" style="text-align: center; margin-bottom: 1rem;">Active Brand Logo</span>
+              
+              <!-- Dark Preview Box -->
+              <div style="background: #0E0B0A; border: 1px solid rgba(198,154,72,0.2); border-radius: 4px; padding: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; min-height: 140px;">
+                <img id="active-logo-preview-dark" src="images/logo.svg" alt="Active Logo (Dark)" style="max-width: 140px; max-height: 120px; object-fit: contain;">
+              </div>
+              <small style="color: var(--c-sand-muted); font-size: 0.75rem; display: block; margin-bottom: 1.5rem;">
+                Current path: <code id="active-logo-path" style="color: var(--c-gold);">images/logo.svg</code>
+              </small>
+
+              <!-- Upload Button & Drop Zone -->
+              <div class="upload-drop-zone" id="logo-drop-zone" style="padding: 1.5rem 1rem;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
+                <strong style="display: block; font-size: 0.88rem; color: var(--c-gold-bright); margin-bottom: 0.3rem;">
+                  Upload New Brand Logo
+                </strong>
+                <p style="font-size: 0.75rem; color: var(--c-sand-muted); margin: 0 0 0.8rem;">
+                  Click or drag SVG, PNG, or WebP here
+                </p>
+                <input type="file" id="logo-file-input" accept="image/*,.svg" style="display: none;">
+                <button type="button" class="btn-gold-outline" id="btn-browse-logo" style="padding: 0.45rem 1rem; font-size: 0.75rem;">
+                  Browse Logo File
+                </button>
+              </div>
+            </div>
+
+            <!-- Brand Texts Form -->
+            <form id="brand-edit-form">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Restaurant Name (English)</label>
+                  <input type="text" id="brand-name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Hindi Devanagari Name</label>
+                  <input type="text" id="brand-hindi-name" class="form-input" style="font-family: var(--font-hindi); font-size: 1.05rem;" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Hindi Tagline</label>
+                  <input type="text" id="brand-tagline" class="form-input" style="font-family: var(--font-hindi);" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">English Subline</label>
+                  <input type="text" id="brand-subline" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Brand Concept & Philosophy</label>
+                <textarea id="brand-concept" class="form-textarea" rows="3" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.75rem 1.8rem; font-size: 0.82rem; cursor: pointer;">
+                Save Brand Texts Live
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 2: HERO & BANNERS
+           ======================================================================= -->
+      <section id="tab-hero" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">✍️ Hero Section & Narrative Headline</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Control the first impression of your website: headlines, call-to-actions, and introduction copy.
+              </p>
+            </div>
+          </div>
+
+          <form id="hero-edit-form" style="max-width: 860px;">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Hero Headline (Hindi Devanagari)</label>
+                <input type="text" id="hero-headline" class="form-input" style="font-family: var(--font-hindi); font-size: 1.05rem;" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Hero Subline (English)</label>
+                <input type="text" id="hero-subline" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Explore CTA Button Text</label>
+                <input type="text" id="hero-cta-explore" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Menu CTA Button Text</label>
+                <input type="text" id="hero-cta-menu" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Intro Heading</label>
+              <input type="text" id="hero-intro-heading" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Brand Intro Narrative Copy</label>
+              <textarea id="hero-intro-copy" class="form-textarea" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Hero Desert Horizon Image Path</label>
+              <div style="display: flex; gap: 0.75rem;">
+                <input type="text" id="hero-bg-image" class="form-input" required>
+                <button type="button" class="btn-gold-outline" id="btn-upload-hero-bg" style="white-space: nowrap; padding: 0.6rem 1rem; font-size: 0.78rem;">
+                  📸 Upload Image
+                </button>
+                <input type="file" id="hero-bg-file-input" accept="image/*" style="display: none;">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.75rem 1.8rem; font-size: 0.82rem; cursor: pointer;">
+              Save Hero Texts Live
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 3: HERITAGE SCROLLYTELLING STORY
+           ======================================================================= -->
+      <section id="tab-story" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">📜 Heritage Journey Scrollytelling Stages</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Edit the poetic 4-stage journey cards that guests experience as they scroll through the Thar Desert to the restaurant.
+              </p>
+            </div>
+          </div>
+
+          <form id="story-edit-form">
+            <div id="story-stages-container">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.75rem 1.8rem; font-size: 0.82rem; cursor: pointer;">
+              Save Heritage Story Stages Live
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 4: MENU DISHES CRUD
+           ======================================================================= -->
+      <section id="tab-dishes" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">🍲 Live Menu Dishes Manager</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Add, edit prices, descriptions, photos, and signatures for all culinary creations.
+              </p>
+            </div>
+            <button id="btn-add-dish" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.3rem; font-size: 0.78rem; cursor: pointer;">
+              + Add New Menu Dish
+            </button>
+          </div>
+
+          <!-- Filter & Search Bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+              <input type="text" id="dish-search-input" class="form-input" placeholder="Search dish by name..." style="width: 260px; padding: 0.5rem 0.9rem;">
+              <select id="dish-category-filter" class="form-select" style="width: 220px; padding: 0.5rem 0.9rem;">
+                <option value="all">All Categories</option>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--c-sand-muted);">
+              Showing <strong id="dish-filtered-count" style="color: var(--c-gold);">0</strong> items
+            </div>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Dish Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Type</th>
+                  <th>Signature</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="dishes-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 5: CATEGORIES MANAGER
+           ======================================================================= -->
+      <section id="tab-categories" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">🗂️ Menu Categories & Culinary Cues</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Organize your menu into royal sections with Hindi titles and cultural icons.
+              </p>
+            </div>
+            <button id="btn-add-category" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.3rem; font-size: 0.78rem; cursor: pointer;">
+              + Add New Category
+            </button>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Icon</th>
+                  <th>Category ID</th>
+                  <th>English Name</th>
+                  <th>Hindi Name</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="categories-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 6: AMBIENCE GALLERY
+           ======================================================================= -->
+      <section id="tab-gallery" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">🖼️ Royal Ambience & Craft Gallery</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Manage photos showcasing your heritage haveli, woodfire kilns, potter crafts, and dining courtyards.
+              </p>
+            </div>
+            <button id="btn-add-gallery-photo" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.3rem; font-size: 0.78rem; cursor: pointer;">
+              + Add Gallery Photo
+            </button>
+          </div>
+
+          <div class="media-grid" id="ambience-gallery-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 7: CUSTOMER REVIEWS & TESTIMONIALS
+           ======================================================================= -->
+      <section id="tab-reviews" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">💬 Guest Testimonials & Reviews</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Curate praise and authentic guest experiences displayed in the royal banquet reviews carousel.
+              </p>
+            </div>
+            <button id="btn-add-review" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.3rem; font-size: 0.78rem; cursor: pointer;">
+              + Add Customer Review
+            </button>
+          </div>
+
+          <div id="reviews-list-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 8: CONTACT, TIMINGS & SOCIALS
+           ======================================================================= -->
+      <section id="tab-restaurant" class="admin-tab-content" style="display: none;">
+        <div class="admin-card" style="max-width: 860px;">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">📍 Restaurant Contact, Address & Operating Hours</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Update phone numbers, email, physical address, Google Maps link, and banquet hours.
+              </p>
+            </div>
+          </div>
+
+          <form id="restaurant-edit-form">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Phone Number (Calling / Reservations)</label>
+                <input type="text" id="rest-phone" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Official Inquiry Email</label>
+                <input type="email" id="rest-email" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Heritage Address</label>
+              <input type="text" id="rest-address" class="form-input" required>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Google Maps Direction Link</label>
+                <input type="url" id="rest-maps" class="form-input" placeholder="https://maps.google.com/...">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Instagram Profile URL</label>
+                <input type="url" id="rest-instagram" class="form-input" placeholder="https://instagram.com/...">
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label">Google Rating (★)</label>
+                <input type="number" step="0.1" id="rest-rating" class="form-input" placeholder="4.8">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Google Reviews Count</label>
+                <input type="number" id="rest-reviews-count" class="form-input" placeholder="532">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Price Range</label>
+                <input type="text" id="rest-price-range" class="form-input" placeholder="₹200–400">
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label">Lunch Hours</label>
+                <input type="text" id="rest-hours-lunch" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Dinner Hours</label>
+                <input type="text" id="rest-hours-dinner" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Operating Days</label>
+                <input type="text" id="rest-hours-days" class="form-input" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.75rem 1.8rem; font-size: 0.82rem; cursor: pointer;">
+              Save Contact Details Live
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 9: MEDIA ASSET LIBRARY
+           ======================================================================= -->
+      <section id="tab-media" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">📁 Visual Media & Asset Library</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Upload, inspect, and copy paths for all dish photos, background banners, and ambience pictures stored on the server.
+              </p>
+            </div>
+            <button id="btn-refresh-media" class="btn-gold-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem; cursor: pointer;">
+              🔄 Refresh Files
+            </button>
+          </div>
+
+          <!-- Multi-File Upload Drop Zone -->
+          <div class="upload-drop-zone" id="media-drop-zone" style="margin-bottom: 2rem;">
+            <div style="font-size: 2.4rem; margin-bottom: 0.6rem;">📸</div>
+            <strong style="font-size: 1rem; color: var(--c-gold-bright); display: block; margin-bottom: 0.3rem;">
+              Drag & Drop Images to Upload Directly
+            </strong>
+            <p style="color: var(--c-sand-muted); font-size: 0.82rem; margin: 0 0 1rem;">
+              Supports JPG, PNG, WebP, SVG. Stored in <code>images/</code> and ready for instant use.
+            </p>
+            <input type="file" id="media-file-input" accept="image/*" multiple style="display: none;">
+            <button type="button" class="btn-gold-outline btn-gold-solid" id="btn-browse-media" style="padding: 0.55rem 1.2rem; font-size: 0.78rem;">
+              Browse Files to Upload
+            </button>
+          </div>
+
+          <!-- Media Files Grid -->
+          <div class="media-grid" id="media-library-grid">
+            <!-- Populated dynamically via /api/media -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 10: RESERVATIONS MONITOR
+           ======================================================================= -->
+      <section id="tab-reservations" class="admin-tab-content" style="display: none;">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">📋 Incoming Table Reservations & Bookings</h3>
+              <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin: 0.3rem 0 0;">
+                Live bookings placed by guests. You can update reservation status to Seated, Confirmed, or Cancelled.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button id="btn-refresh-reservations" class="btn-gold-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem;">
+                🔄 Refresh
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Guest Name</th>
+                  <th>Contact</th>
+                  <th>Date & Time</th>
+                  <th>Guests</th>
+                  <th>Seating</th>
+                  <th>Status</th>
+                  <th>Change Status</th>
+                </tr>
+              </thead>
+              <tbody id="reservations-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           TAB 11: SETTINGS & BACKUPS
+           ======================================================================= -->
+      <section id="tab-settings" class="admin-tab-content" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem;">
+          
+          <!-- Change Password Card -->
+          <div class="admin-card">
+            <h3 class="admin-card-title" style="margin-bottom: 1rem;">🔐 Change Admin Passphrase</h3>
+            <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+              Update the administrative password used to unlock this control portal.
+            </p>
+            <form id="change-pw-form">
+              <div class="form-group">
+                <label class="form-label">New Passphrase</label>
+                <input type="password" id="new-admin-password" class="form-input" minlength="4" required placeholder="Minimum 4 characters">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Confirm New Passphrase</label>
+                <input type="password" id="confirm-admin-password" class="form-input" minlength="4" required placeholder="Repeat passphrase">
+              </div>
+              <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.7rem 1.4rem; font-size: 0.78rem;">
+                Update Passphrase
+              </button>
+            </form>
+          </div>
+
+          <!-- Backup & Restore Card -->
+          <div class="admin-card">
+            <h3 class="admin-card-title" style="margin-bottom: 1rem;">💾 Site Data Backup & Restore</h3>
+            <p style="color: var(--c-sand-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+              Safely download a full JSON snapshot of your website or restore an existing backup.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <button type="button" id="btn-download-backup" class="btn-gold-outline btn-gold-solid" style="padding: 0.75rem 1.4rem; font-size: 0.8rem; text-align: center;">
+                📥 Download Full Site Backup (.json)
+              </button>
+
+              <div style="border-top: 1px solid rgba(198,154,72,0.2); padding-top: 1rem;">
+                <label class="form-label">Restore from Backup File</label>
+                <input type="file" id="backup-file-input" accept=".json" class="form-input" style="padding: 0.5rem;">
+                <button type="button" id="btn-restore-backup" class="btn-gold-outline" style="margin-top: 0.6rem; padding: 0.6rem 1.2rem; font-size: 0.75rem; border-color: #F57C00; color: #FFE082;">
+                  ⚠️ Restore Backup (Overwrites Current)
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: DISH EDIT & CREATE (<dialog>)
+       ========================================================================= -->
+  <dialog id="admin-dish-modal" class="admin-modal-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(198,154,72,0.25); padding-bottom: 1rem;">
+      <h3 id="modal-dish-title" style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--c-sand-light); margin: 0;">
+        Edit Menu Dish
+      </h3>
+      <button id="btn-close-dish-modal" style="background: none; border: none; color: #FFF; font-size: 1.6rem; cursor: pointer;">&times;</button>
+    </div>
+
+    <form id="dish-form">
+      <input type="hidden" id="dish-id">
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Dish Name (English)</label>
+          <input type="text" id="dish-name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hindi Devanagari Name</label>
+          <input type="text" id="dish-hindi" class="form-input" style="font-family: var(--font-hindi); font-size: 1.05rem;">
+        </div>
+      </div>
+
+      <div class="form-grid-3">
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select id="dish-category" class="form-select" required>
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Price (₹ INR)</label>
+          <input type="number" id="dish-price" class="form-input" required min="10">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Dietary Classification</label>
+          <select id="dish-veg" class="form-select">
+            <option value="true">Pure Vegetarian (Green Symbol)</option>
+            <option value="false">Non-Vegetarian (Red Symbol)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Description & Heritage Story</label>
+        <textarea id="dish-desc" class="form-textarea" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Ingredients (Comma Separated)</label>
+        <input type="text" id="dish-ingredients" class="form-input" placeholder="e.g. Panchmel Dal, Desi Ghee, Mathania Mirch">
+      </div>
+
+      <!-- Dish Image Upload & Path with Inline Preview -->
+      <div class="form-group">
+        <label class="form-label">Dish Photo Image</label>
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.6rem;">
+          <img id="dish-preview-img" src="images/royal-thaali.jpg" alt="Dish Preview" style="width: 70px; height: 70px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(198,154,72,0.4);">
+          <div style="flex: 1;">
+            <input type="text" id="dish-image" class="form-input" required placeholder="images/dish-name.jpg">
+          </div>
+          <button type="button" class="btn-gold-outline" id="btn-upload-dish-photo" style="white-space: nowrap; padding: 0.65rem 1rem; font-size: 0.75rem;">
+            📸 Upload Photo
+          </button>
+          <input type="file" id="dish-file-input" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; margin-top: 0.5rem;">
+          <input type="checkbox" id="dish-signature" style="width: 18px; height: 18px;">
+          <span style="font-size: 0.88rem; color: var(--c-gold-bright); font-weight: 600;">
+            ★ Mark as Royal Signature Dish (Featured on Homepage Showcase)
+          </span>
+        </label>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; border-top: 1px solid rgba(198,154,72,0.2); padding-top: 1rem;">
+        <button type="button" id="btn-cancel-dish" class="btn-gold-outline" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">Cancel</button>
+        <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.6rem; font-size: 0.78rem;">Save Dish Entry</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- =========================================================================
+       MODAL: CATEGORY EDIT & CREATE (<dialog>)
+       ========================================================================= -->
+  <dialog id="admin-category-modal" class="admin-modal-card" style="max-width: 580px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(198,154,72,0.25); padding-bottom: 1rem;">
+      <h3 id="modal-cat-title" style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--c-sand-light); margin: 0;">
+        Edit Category
+      </h3>
+      <button id="btn-close-cat-modal" style="background: none; border: none; color: #FFF; font-size: 1.6rem; cursor: pointer;">&times;</button>
+    </div>
+
+    <form id="category-form">
+      <input type="hidden" id="cat-id">
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Category Name (English)</label>
+          <input type="text" id="cat-name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hindi Devanagari Name</label>
+          <input type="text" id="cat-hindi" class="form-input" style="font-family: var(--font-hindi); font-size: 1.05rem;" required>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Icon Emoji</label>
+          <input type="text" id="cat-icon" class="form-input" placeholder="e.g. 👑, 🥘, 🌾" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Visual Interactive Cue ID</label>
+          <input type="text" id="cat-cue" class="form-input" placeholder="e.g. thali-orbit, haveli-door">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Category Description</label>
+        <textarea id="cat-desc" class="form-textarea" rows="3" required></textarea>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; border-top: 1px solid rgba(198,154,72,0.2); padding-top: 1rem;">
+        <button type="button" id="btn-cancel-cat" class="btn-gold-outline" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">Cancel</button>
+        <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.6rem; font-size: 0.78rem;">Save Category</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- =========================================================================
+       MODAL: AMBIENCE PHOTO EDIT & CREATE (<dialog>)
+       ========================================================================= -->
+  <dialog id="admin-gallery-modal" class="admin-modal-card" style="max-width: 600px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(198,154,72,0.25); padding-bottom: 1rem;">
+      <h3 id="modal-gallery-title" style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--c-sand-light); margin: 0;">
+        Add Ambience Photo
+      </h3>
+      <button id="btn-close-gallery-modal" style="background: none; border: none; color: #FFF; font-size: 1.6rem; cursor: pointer;">&times;</button>
+    </div>
+
+    <form id="gallery-form">
+      <input type="hidden" id="gallery-id">
+
+      <div class="form-group">
+        <label class="form-label">Photo Title</label>
+        <input type="text" id="gallery-title" class="form-input" placeholder="e.g. The Courtyard Jharokha" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Caption / Description</label>
+        <textarea id="gallery-caption" class="form-textarea" rows="2" placeholder="e.g. Dining under ambient lantern light..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Image Path</label>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <img id="gallery-preview-img" src="images/haveli-courtyard.jpg" alt="Preview" style="width: 70px; height: 70px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(198,154,72,0.4);">
+          <input type="text" id="gallery-image" class="form-input" required placeholder="images/photo.jpg">
+          <button type="button" class="btn-gold-outline" id="btn-upload-gallery-photo" style="white-space: nowrap; padding: 0.65rem 1rem; font-size: 0.75rem;">
+            📸 Upload
+          </button>
+          <input type="file" id="gallery-file-input" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; border-top: 1px solid rgba(198,154,72,0.2); padding-top: 1rem;">
+        <button type="button" id="btn-cancel-gallery" class="btn-gold-outline" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">Cancel</button>
+        <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.6rem; font-size: 0.78rem;">Save Gallery Photo</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- =========================================================================
+       MODAL: CUSTOMER REVIEW EDIT & CREATE (<dialog>)
+       ========================================================================= -->
+  <dialog id="admin-review-modal" class="admin-modal-card" style="max-width: 640px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(198,154,72,0.25); padding-bottom: 1rem;">
+      <h3 id="modal-review-title" style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--c-sand-light); margin: 0;">
+        Add Customer Review
+      </h3>
+      <button id="btn-close-review-modal" style="background: none; border: none; color: #FFF; font-size: 1.6rem; cursor: pointer;">&times;</button>
+    </div>
+
+    <form id="review-form">
+      <input type="hidden" id="review-id">
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Guest Name</label>
+          <input type="text" id="review-guest-name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Designation / City</label>
+          <input type="text" id="review-designation" class="form-input" placeholder="e.g. New Delhi" required>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Star Rating (1 - 5)</label>
+          <select id="review-rating" class="form-select">
+            <option value="5">★★★★★ 5 Stars</option>
+            <option value="4">★★★★☆ 4 Stars</option>
+            <option value="3">★★★☆☆ 3 Stars</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Review Category</label>
+          <select id="review-category" class="form-select">
+            <option value="celebrations">Royal Celebrations</option>
+            <option value="thaali">Grand Thaali Experience</option>
+            <option value="ambience">Heritage Ambience</option>
+            <option value="curries">Authentic Curries & Flavours</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Review Title Headline</label>
+        <input type="text" id="review-headline" class="form-input" required placeholder="e.g. An Unforgettable Feast Under Starlit Arches">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Review Body</label>
+        <textarea id="review-body" class="form-textarea" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Occasion / Visit Info</label>
+        <input type="text" id="review-occasion" class="form-input" placeholder="e.g. Visited February 2026 • Royal Banquet">
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; border-top: 1px solid rgba(198,154,72,0.2); padding-top: 1rem;">
+        <button type="button" id="btn-cancel-review" class="btn-gold-outline" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">Cancel</button>
+        <button type="submit" class="btn-gold-outline btn-gold-solid" style="padding: 0.65rem 1.6rem; font-size: 0.78rem;">Save Review</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Load Portal Script -->
+  <script src="js/admin.js"></script>
+</body>
+</html>

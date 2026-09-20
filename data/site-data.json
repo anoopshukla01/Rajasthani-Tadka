@@ -1,0 +1,610 @@
+{
+  "restaurant": {
+    "name": "RAJASTHANI TADKA",
+    "hindi_name": "राजस्थानी तड़का",
+    "tagline": "स्वाद जो राजस्थान से आया है",
+    "subline": "Traditional Thalis & Spicy Tadka • Royal Taste • Desi Vibes • Family Dining",
+    "concept": "Traditional Thalis & Spicy Tadka with authentic Rajasthani taste in Gorakhpur.",
+    "logo": "images/rajasthani-mascot-transparent.png",
+    "phone": "+91 81155 96663",
+    "phone_display": "081155 96663",
+    "email": "padharo@rajasthanitadka.com",
+    "address": "Near Rachit Hospital, Bansgaon Colony, Daudpur, Gorakhpur, Uttar Pradesh 273001, India",
+    "landmark": "Near Rachit Hospital, Daudpur",
+    "city": "Gorakhpur",
+    "state": "Uttar Pradesh",
+    "pincode": "273001",
+    "rating": 4.8,
+    "reviews_count": 532,
+    "price_range": "₹200–400",
+    "hours": {
+      "lunch": "10:00 AM – 04:00 PM",
+      "dinner": "04:00 PM – 11:00 PM",
+      "full": "10:00 AM – 11:00 PM",
+      "days": "Monday – Sunday (10:00 AM – 11:00 PM)"
+    },
+    "instagram": "https://www.instagram.com/rajasthani__tadka/",
+    "instagram_handle": "@rajasthani__tadka",
+    "maps": "https://maps.google.com/?q=Rajasthani+Tadka+near+Rachit+hospital+Bansgaon+Colony+Daudpur+Gorakhpur+Uttar+Pradesh+273001",
+    "maps_embed": "https://maps.google.com/maps?q=Rajasthani%20Tadka%2C%20near%20Rachit%20hospital%2C%20Bansgaon%20Colony%2C%20Daudpur%2C%20Gorakhpur%2C%20Uttar%20Pradesh%20273001&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "zomato": "https://www.zomato.com/gorakhpur/rajasthani-tadka-taramandal",
+    "swiggy": "https://www.swiggy.com/city/gorakhpur/rajasthani-tadka-paidleganj"
+  },
+  "hero": {
+    "headline": "स्वाद जो राजस्थान से आया है",
+    "subline": "An authentic taste of Rajasthan.",
+    "cta_explore": "EXPLORE THE TASTE",
+    "cta_menu": "VIEW MENU",
+    "intro_heading": "RAJASTHANI TADKA",
+    "intro_copy": "From the golden sands of Thar to the royal kitchens of Mewar, we bring you centuries of culinary devotion, prepared on slow woodfire embers and served with genuine royal hospitality.",
+    "bg_image": "images/thar-desert.jpg"
+  },
+  "story": {
+    "section_title": "THE TASTE OF RAJASTHAN",
+    "section_pre_title": "स्वाद की एक परंपरा",
+    "stages": [
+      {
+        "id": "stage-1",
+        "step": "Stage 01 • Thar Desert",
+        "title": "The Whispering Sands of Marwar",
+        "body": "Under the amber glow of the desert sunset, our journey begins where wild Ker berries and Sangri beans thrive amidst undulating dunes, shaped by ancient winds and untamed warrior spirit."
+      },
+      {
+        "id": "stage-2",
+        "step": "Stage 02 • Village Hearth",
+        "title": "Woodfire Embers & Stone Mills",
+        "body": "In rural Shekhawati hamlets, the morning rhythm echoes with hand-beaten bajra rotis puffing over clay chulhas, golden cow ghee melting over earthen pots, and hand-pounded Mathania spices filling the crisp air."
+      },
+      {
+        "id": "stage-3",
+        "step": "Stage 03 • Royal Court",
+        "title": "The Grand Haveli Threshold",
+        "body": "Carved sandstone arches welcome the weary traveller into fragrant courtyards of marigold and rosewater. Here, royal Khansamas historically crafted feasts fit for kings with recipes guarded as royal state secrets."
+      },
+      {
+        "id": "stage-4",
+        "step": "Stage 04 • Arrival",
+        "title": "RAJASTHANI TADKA",
+        "body": "\"From the heart of Rajasthan, served with a modern touch.\" We invite you to step through our threshold and partake in the royal culinary ritual of Mewar and Marwar.",
+        "cta_text": "OPEN ROYAL MENU"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "thaali",
+      "name": "The Royal Thaali",
+      "hindi_name": "शाही थाली",
+      "icon": "👑",
+      "cue": "thali-orbit",
+      "description": "A lavish round brass platter embodying the complete spectrum of Rajasthan's gastronomic heritage."
+    },
+    {
+      "id": "specialities",
+      "name": "Rajasthani Specialities",
+      "hindi_name": "खास राजस्थानी",
+      "icon": "✨",
+      "cue": "haveli-door",
+      "description": "Timeless recipes preserved across royal generations, bursting with indigenous spices and slow-cooked richness."
+    },
+    {
+      "id": "breads",
+      "name": "Chulha Breads",
+      "hindi_name": "चूल्हे की रोटियाँ",
+      "icon": "🌾",
+      "cue": "chulha-flame",
+      "description": "Hand-flattened artisanal rotis and parathas baked over open clay chulha and wood embers, slathered in fresh white butter."
+    },
+    {
+      "id": "mains",
+      "name": "Main Course",
+      "hindi_name": "मुख्य भोजन",
+      "icon": "🥘",
+      "cue": "curry-simmer",
+      "description": "Rich yogurt-infused curries, slow-simmered gravies, and aromatic curations capturing royal banquet traditions."
+    },
+    {
+      "id": "desserts",
+      "name": "Royal Desserts",
+      "hindi_name": "शाही मिष्ठान",
+      "icon": "🍯",
+      "cue": "sunset-glow",
+      "description": "Decadent confections steeped in pure desi ghee, saffron threads, pistachios, and thickened clotted cream."
+    },
+    {
+      "id": "beverages",
+      "name": "Beverages & Chaas",
+      "hindi_name": "शीतल पेय व छाछ",
+      "icon": "🏺",
+      "cue": "matka-cool",
+      "description": "Refreshing earthen kulhad drinks, spiced buttermilk, and saffron-cardamom infusions that quench desert thirst."
+    }
+  ],
+  "dishes": [
+    {
+      "id": "thali-maharaja",
+      "category": "thaali",
+      "name": "Grand Maharaja Thaali",
+      "hindi_name": "भव्य महाराजा थाली",
+      "description": "The quintessential royal feast served in an antique hand-beaten bronze platter with 14 curated bowls: Dal Baati Churma, Gatte Ki Sabzi, Ker Sangri, Rajasthani Kadhi, Bajra Roti with homemade makhan, Jodhpuri Mirchi Vada, garlic chutney, and saffron malpua.",
+      "price": 890,
+      "veg": true,
+      "spicy": "Medium",
+      "is_signature": true,
+      "ingredients": [
+        "Panchmel Dal",
+        "Wheat Baati",
+        "Desi Ghee",
+        "Besan Gatte",
+        "Ker Sangri",
+        "Bajra Flour",
+        "White Makhan",
+        "Amchur"
+      ],
+      "image": "images/royal-thaali.jpg"
+    },
+    {
+      "id": "thali-mewari",
+      "category": "thaali",
+      "name": "Mewari Royal Feast",
+      "hindi_name": "मेवाड़ी राजसी थाल",
+      "description": "An imperial banquet celebrating Udaipur's warrior kings: featuring slow-simmered spicy Laal Maas, Govind Gatta, Bajre Ka Sogra, Ker Sangri, and Mawa Kachori.",
+      "price": 980,
+      "veg": false,
+      "spicy": "Fiery",
+      "is_signature": true,
+      "ingredients": [
+        "Tender Mutton",
+        "Mathania Chillies",
+        "Besan Dumplings",
+        "Khoya",
+        "Desi Ghee",
+        "Whole Spices"
+      ],
+      "image": "images/laal-maas.jpg"
+    },
+    {
+      "id": "dal-baati-churma",
+      "category": "specialities",
+      "name": "Dal Baati Churma",
+      "hindi_name": "दाल बाटी चूरमा",
+      "description": "Flaky golden baatis baked over cowdung cakes and drenched in pure melted cow ghee, paired with aromatic panchmel dal and sweet crushed wheat churma.",
+      "price": 520,
+      "veg": true,
+      "spicy": "Medium",
+      "is_signature": true,
+      "ingredients": [
+        "Panchmel Dal (5 Lentils)",
+        "Coarse Wheat Flour",
+        "Pure Desi Ghee",
+        "Cardamom",
+        "Jaggery & Bura"
+      ],
+      "image": "images/dal-baati.jpg"
+    },
+    {
+      "id": "gatte-ki-sabzi",
+      "category": "specialities",
+      "name": "Gatte Ki Sabzi",
+      "hindi_name": "शाही गट्टे की सब्ज़ी",
+      "description": "Steamed gram-flour cylinders infused with carom and coriander seeds, simmered in a velvety spiced yogurt gravy with whole red Mathania chillies.",
+      "price": 440,
+      "veg": true,
+      "spicy": "Mild",
+      "is_signature": true,
+      "ingredients": [
+        "Gram Flour (Besan)",
+        "Fresh Curd",
+        "Ajwain (Carom)",
+        "Mustard Oil",
+        "Hing (Asafoetida)"
+      ],
+      "image": "images/gatte-ki-sabzi.jpg"
+    },
+    {
+      "id": "ker-sangri",
+      "category": "specialities",
+      "name": "Desert Ker Sangri",
+      "hindi_name": "थार की केर सांगरी",
+      "description": "Rare wild caper berries (ker) and desert beans (sangri) handpicked from the Thar Desert, stir-fried with raisins, dried mango, and warm rustic spices.",
+      "price": 560,
+      "veg": true,
+      "spicy": "Medium",
+      "is_signature": true,
+      "ingredients": [
+        "Ker Berries",
+        "Sangri Beans",
+        "Kishmish (Raisins)",
+        "Amchur",
+        "Mustard Oil",
+        "Degi Mirch"
+      ],
+      "image": "images/ker-sangri.jpg"
+    },
+    {
+      "id": "laal-maas",
+      "category": "specialities",
+      "name": "Royal Rajput Laal Maas",
+      "hindi_name": "राजपूताना लाल मांस",
+      "description": "The legendary hunting dish of Rajasthan royalty: succulent tender mutton slow-braised for six hours with red Mathania chillies, garlic paste, and smoked charcoal dhungar.",
+      "price": 680,
+      "veg": false,
+      "spicy": "Fiery",
+      "is_signature": true,
+      "ingredients": [
+        "Prime Lamb",
+        "Mathania Red Chillies",
+        "Garlic Paste",
+        "Mustard Oil",
+        "Smoked Ghee Charcoal"
+      ],
+      "image": "images/laal-maas.jpg"
+    },
+    {
+      "id": "rajasthani-kadhi",
+      "category": "mains",
+      "name": "Rajasthani Kadhi Pakora",
+      "hindi_name": "राजस्थानी कढ़ी पकौड़ा",
+      "description": "Tangy buttermilk stew tempered with crackling fenugreek seeds, cloves, curry leaves, and melt-in-mouth onion-besan pakoras.",
+      "price": 380,
+      "veg": true,
+      "spicy": "Mild",
+      "is_signature": false,
+      "ingredients": [
+        "Sour Buttermilk",
+        "Besan",
+        "Methi Seeds",
+        "Curry Leaves",
+        "Ginger-Green Chili"
+      ],
+      "image": "images/crop_dal-baati.jpg"
+    },
+    {
+      "id": "sev-tamatar",
+      "category": "mains",
+      "name": "Dhabha Sev Tamatar",
+      "hindi_name": "धार्मिक सेव टमाटर",
+      "description": "Juicy sweet-sour tomato gravy tempered with cumin, green chilies, and topped with crunchy spiced Ratlami sev.",
+      "price": 360,
+      "veg": true,
+      "spicy": "Medium",
+      "is_signature": false,
+      "ingredients": [
+        "Country Tomatoes",
+        "Ratlami Sev",
+        "Cumin",
+        "Coriander",
+        "Ginger"
+      ],
+      "image": "images/crop_raj-kachori.jpg"
+    },
+    {
+      "id": "bajre-ki-roti",
+      "category": "breads",
+      "name": "Bajre Ki Roti with Makhan",
+      "hindi_name": "बाजरे की रोटी व माखन",
+      "description": "Rustic stone-ground pearl millet flatbread, hand-patted and roasted over charcoal embers, served steaming with fresh churned white butter and jaggery.",
+      "price": 120,
+      "veg": true,
+      "spicy": "None",
+      "is_signature": true,
+      "ingredients": [
+        "Stone-ground Bajra",
+        "Warm Water",
+        "Fresh Churned White Makhan",
+        "Organic Gur"
+      ],
+      "image": "images/woodfire-kiln.jpg"
+    },
+    {
+      "id": "missi-roti",
+      "category": "breads",
+      "name": "Tandoori Missi Roti",
+      "hindi_name": "तंदूरी मिस्सी रोटी",
+      "description": "Crisp whole-wheat and gram flour flatbread kneaded with fresh kasuri methi, chopped onions, pomegranate seeds, and ajwain.",
+      "price": 110,
+      "veg": true,
+      "spicy": "None",
+      "is_signature": false,
+      "ingredients": [
+        "Gram Flour",
+        "Wheat Flour",
+        "Kasuri Methi",
+        "Anardana",
+        "Ajwain"
+      ],
+      "image": "images/woodfire-kiln.jpg"
+    },
+    {
+      "id": "malai-ghevar",
+      "category": "desserts",
+      "name": "Royal Malai Ghevar",
+      "hindi_name": "शाही मलाई घेवर",
+      "description": "Golden honeycomb pastry immersed in saffron syrup, crowned with velvety slow-reduced malai rabri, silver vark leaf, and crushed Iranian pistachios.",
+      "price": 390,
+      "veg": true,
+      "spicy": "Sweet",
+      "is_signature": true,
+      "ingredients": [
+        "Flour",
+        "Desi Ghee",
+        "Saffron (Kesar)",
+        "Cardamom",
+        "Thick Rabri",
+        "Silver Foil"
+      ],
+      "image": "images/royal-ghevar.jpg"
+    },
+    {
+      "id": "mawa-kachori",
+      "category": "desserts",
+      "name": "Jodhpuri Mawa Kachori",
+      "hindi_name": "जोधपुरी मावा कचौरी",
+      "description": "Crispy puffed golden pastry stuffed with rich sweetened khoya, nuts, and crushed green cardamom, dipped in saffron sugar nectar.",
+      "price": 320,
+      "veg": true,
+      "spicy": "Sweet",
+      "is_signature": true,
+      "ingredients": [
+        "Mawa (Khoya)",
+        "Maida",
+        "Saffron Syrup",
+        "Almonds",
+        "Pistachios"
+      ],
+      "image": "images/pyaaz-kachori.jpg"
+    },
+    {
+      "id": "malpua-rabri",
+      "category": "desserts",
+      "name": "Pushkari Malpua Rabri",
+      "hindi_name": "पुष्करी मालपुआ रबड़ी",
+      "description": "Soft melt-in-mouth milk pancakes shallow-fried in desi ghee, dipped in cardamom syrup and ladled with rich creamy rabri.",
+      "price": 340,
+      "veg": true,
+      "spicy": "Sweet",
+      "is_signature": false,
+      "ingredients": [
+        "Reduced Milk (Mawa)",
+        "Fennel Seeds",
+        "Desi Ghee",
+        "Cardamom",
+        "Rabri"
+      ],
+      "image": "images/royal-dessert.jpg"
+    },
+    {
+      "id": "matka-chaas",
+      "category": "beverages",
+      "name": "Kulhad Matka Chaas",
+      "hindi_name": "कुल्हड़ मटका छाछ",
+      "description": "Chilled traditional churned buttermilk kept in clay pots, seasoned with roasted cumin, rock salt, mint leaves, and a touch of asafoetida.",
+      "price": 140,
+      "veg": true,
+      "spicy": "Mild",
+      "is_signature": true,
+      "ingredients": [
+        "Curd Whey",
+        "Bhuna Jeera (Roasted Cumin)",
+        "Kala Namak",
+        "Fresh Mint",
+        "Clay Kulhad"
+      ],
+      "image": "images/matka-chai.jpg"
+    },
+    {
+      "id": "kesar-thandai",
+      "category": "beverages",
+      "name": "Royal Shahi Thandai",
+      "hindi_name": "शाही केसर ठंडाई",
+      "description": "Fragrant milk infused with crushed Kashmiri saffron, almonds, melon seeds, rose petals, fennel, and black pepper.",
+      "price": 220,
+      "veg": true,
+      "spicy": "Mild",
+      "is_signature": false,
+      "ingredients": [
+        "Full Cream Milk",
+        "Kashmiri Kesar",
+        "Badam Magaz Paste",
+        "Rose Water",
+        "White Pepper"
+      ],
+      "image": "images/artisan-coffee.jpg"
+    }
+  ],
+  "guest_reviews": [
+    {
+      "id": "rev-1",
+      "name": "Satrughan Shukla",
+      "designation": "Gorakhpur Patron • 5 Reviews",
+      "rating": 5,
+      "category": "celebrations",
+      "title": "Service Staff Was Very Coordinative and Customer Friendly",
+      "body": "Service staff was very coordinative and customer friendly. Food quality was great and the staff made sure we had a wonderful dining experience. Must visit with family!",
+      "occasion": "Google Review • ★★★★★ • 1 month ago"
+    },
+    {
+      "id": "rev-2",
+      "name": "Atharv Chaturvedi",
+      "designation": "Gorakhpur • 4 Reviews",
+      "rating": 5,
+      "category": "thaali",
+      "title": "The Food Here is Fantastic, Love the Taste!",
+      "body": "The food here is Fantastic. Love the taste and the staff was also very cooperative and well behaved👍 Best authentic taste and royal flavours in town.",
+      "occasion": "Google Review • ★★★★★ • 5 months ago"
+    },
+    {
+      "id": "rev-3",
+      "name": "Anurag Dewan",
+      "designation": "Local Guide • 2 Reviews",
+      "rating": 5,
+      "category": "ambience",
+      "title": "Delicious, Fresh Food with Clean Ambience",
+      "body": "The food was very tasty, delicious and fresh and the ambience was very nice and clean.👍👍👍👍👍 Do visit if you are around Indranagar and Daudpur.",
+      "occasion": "Google Review • ★★★★★ • 3 months ago"
+    },
+    {
+      "id": "rev-4",
+      "name": "W A",
+      "designation": "Local Guide • 4 Reviews • ₹200–400",
+      "rating": 5,
+      "category": "curries",
+      "title": "Excellent Service, Great Value ₹200–400",
+      "body": "Service was excellent and staff behaviour was also excellent. Atmosphere is pleasant. Great value for authentic food at ₹200–400 per person.",
+      "occasion": "Google Local Guide • ★★★★★ • 1 month ago"
+    },
+    {
+      "id": "rev-5",
+      "name": "Vaibhav Tripathi",
+      "designation": "Local Guide • 19 Reviews • 10 Photos",
+      "rating": 5,
+      "category": "thaali",
+      "title": "Awesome Food & Authentic Tadka",
+      "body": "Awesome food with rich authentic flavours! Staff was very courteous and attentive. A great destination for authentic thalis and desi tadka in Daudpur, Gorakhpur.",
+      "occasion": "Google Local Guide • ★★★★★ • 1 month ago"
+    },
+    {
+      "id": "rev-6",
+      "name": "Harsh Sadhan",
+      "designation": "Daudpur Patron • 5 Reviews",
+      "rating": 5,
+      "category": "curries",
+      "title": "Food Taste is Good & Staff is Humble",
+      "body": "Food taste is good and flavours are traditional. Staff is also very humble and welcoming. Highly recommended for family dining in Bansgaon Colony.",
+      "occasion": "Google Review • ★★★★★ • 5 months ago"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "name": "Satrughan Shukla",
+      "designation": "Gorakhpur Patron • 5 Reviews",
+      "rating": 5,
+      "category": "celebrations",
+      "title": "Service Staff Was Very Coordinative and Customer Friendly",
+      "body": "Service staff was very coordinative and customer friendly. Food quality was great and the staff made sure we had a wonderful dining experience. Must visit with family!",
+      "occasion": "Google Review • ★★★★★ • 1 month ago"
+    },
+    {
+      "id": "rev-2",
+      "name": "Atharv Chaturvedi",
+      "designation": "Gorakhpur • 4 Reviews",
+      "rating": 5,
+      "category": "thaali",
+      "title": "The Food Here is Fantastic, Love the Taste!",
+      "body": "The food here is Fantastic. Love the taste and the staff was also very cooperative and well behaved👍 Best authentic taste and royal flavours in town.",
+      "occasion": "Google Review • ★★★★★ • 5 months ago"
+    },
+    {
+      "id": "rev-3",
+      "name": "Anurag Dewan",
+      "designation": "Local Guide • 2 Reviews",
+      "rating": 5,
+      "category": "ambience",
+      "title": "Delicious, Fresh Food with Clean Ambience",
+      "body": "The food was very tasty, delicious and fresh and the ambience was very nice and clean.👍👍👍👍👍 Do visit if you are around Indranagar and Daudpur.",
+      "occasion": "Google Review • ★★★★★ • 3 months ago"
+    },
+    {
+      "id": "rev-4",
+      "name": "W A",
+      "designation": "Local Guide • 4 Reviews • ₹200–400",
+      "rating": 5,
+      "category": "curries",
+      "title": "Excellent Service, Great Value ₹200–400",
+      "body": "Service was excellent and staff behaviour was also excellent. Atmosphere is pleasant. Great value for authentic food at ₹200–400 per person.",
+      "occasion": "Google Local Guide • ★★★★★ • 1 month ago"
+    },
+    {
+      "id": "rev-5",
+      "name": "Vaibhav Tripathi",
+      "designation": "Local Guide • 19 Reviews • 10 Photos",
+      "rating": 5,
+      "category": "thaali",
+      "title": "Awesome Food & Authentic Tadka",
+      "body": "Awesome food with rich authentic flavours! Staff was very courteous and attentive. A great destination for authentic thalis and desi tadka in Daudpur, Gorakhpur.",
+      "occasion": "Google Local Guide • ★★★★★ • 1 month ago"
+    },
+    {
+      "id": "rev-6",
+      "name": "Harsh Sadhan",
+      "designation": "Daudpur Patron • 5 Reviews",
+      "rating": 5,
+      "category": "curries",
+      "title": "Food Taste is Good & Staff is Humble",
+      "body": "Food taste is good and flavours are traditional. Staff is also very humble and welcoming. Highly recommended for family dining in Bansgaon Colony.",
+      "occasion": "Google Review • ★★★★★ • 5 months ago"
+    }
+  ],
+  "ambience_gallery": [
+    {
+      "id": "ambience-1",
+      "title": "Table Area",
+      "caption": "Dining under ambient lantern light in a restored.",
+      "image": "images/WhatsApp_Image_2026-09-20_at_00.42.12.jpeg"
+    },
+    {
+      "id": "ambience-2",
+      "title": "The lighting",
+      "caption": "Lighting in a modern but with Rajasthan touch",
+      "image": "images/WhatsApp_Image_2026-09-20_at_00.42.12_(1).jpeg"
+    },
+    {
+      "id": "ambience-3",
+      "title": "The Royal Desserts",
+      "caption": "Every dessert gives a premium taste and feel of Royalty",
+      "image": "images/WhatsApp_Image_2026-09-20_at_00.42.11_(1).jpeg"
+    },
+    {
+      "id": "ambience-4",
+      "title": "The place of Royalty",
+      "caption": "Premiumness with the touch of Rajasthani spices",
+      "image": "images/WhatsApp_Image_2026-09-20_at_00.42.07.jpeg"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "RT-42385",
+      "guest_name": "Kunwar Pratap",
+      "phone": "pratap@mewar.com",
+      "email": "pratap@mewar.com",
+      "date": "2026-09-19",
+      "time": "07:30 PM",
+      "guests": 2,
+      "seating": "Courtyard Jharokha",
+      "notes": "Table for 4 under the courtyard jharokha for royal anniversary",
+      "status": "Confirmed",
+      "created_at": "2026-09-19T23:20:42.409272Z"
+    },
+    {
+      "id": "RES-8921",
+      "guest_name": "Rathore Family",
+      "phone": "+91 98290 12345",
+      "email": "rathore@heritage.in",
+      "date": "2026-09-20",
+      "time": "08:00 PM",
+      "guests": 4,
+      "seating": "Courtyard Jharokha",
+      "notes": "Celebrating 25th anniversary, prefer royal thaali setup.",
+      "status": "Confirmed",
+      "created_at": "2026-09-17T18:30:00Z"
+    },
+    {
+      "id": "RES-8922",
+      "guest_name": "Aarav Sharma",
+      "phone": "+91 99112 34567",
+      "email": "aarav.sharma@gmail.com",
+      "date": "2026-09-21",
+      "time": "01:00 PM",
+      "guests": 2,
+      "seating": "Indoor Royal Lounge",
+      "notes": "First time dining, looking forward to Dal Baati Churma.",
+      "status": "Confirmed",
+      "created_at": "2026-09-17T19:15:00Z"
+    }
+  ],
+  "admin": {
+    "auth_token": "RT_SECRET_TOKEN_2026",
+    "password_hash": "admin123"
+  }
+}

@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAJASTHANI TADKA — Authentic Royal Flavours & Cultural Journey</title>
+  <meta name="description" content="Immerse in a cinematic journey through Rajasthan leading to Rajasthani Tadka. Experience authentic royal flavours, slow-woodfire delicacies, the grand Maharaja Thaali, and legendary Mewari hospitality.">
+  <meta name="theme-color" content="#14100E">
+
+  <!-- Favicon / Brand Anchor Icon -->
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <!-- Preload Fonts & Key Hero Image -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=3.0">
+</head>
+<body>
+
+  <!-- =========================================================================
+       PERSISTENT CINEMATIC SCROLLYTELLING VIEWPORT (Full Bleed Background 60fps)
+       ========================================================================= -->
+  <div id="cinematic-viewport" aria-hidden="true">
+    <canvas id="sky-canvas"></canvas>
+    <div class="desert-horizon-layer" style="background-image: url('images/thar-desert.jpg');"></div>
+    <div class="environment-overlay"></div>
+    <canvas id="dust-canvas"></canvas>
+    <canvas id="traveller-canvas"></canvas>
+  </div>
+
+  <!-- =========================================================================
+       TOP HEADER & BRAND NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" role="banner">
+    <a href="#hero" class="header-brand" aria-label="Rajasthani Tadka Homepage">
+      <img src="images/rajasthani-mascot-transparent.png" alt="Rajasthani Tadka Logo" class="header-logo-icon">
+      <div class="header-brand-text">
+        <span class="brand-title">Rajasthani Tadka</span>
+        <span class="brand-hindi">स्वाद जो राजस्थान से आया है</span>
+      </div>
+    </a>
+
+    <nav class="header-nav" aria-label="Main Journey Navigation">
+      <a href="#journey" class="nav-link">The Journey</a>
+      <a href="#taste" class="nav-link">The Taste</a>
+      <a href="#thaali-section" class="nav-link">The Thaali</a>
+      <a href="#ambience" class="nav-link">Ambience</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#location" class="nav-link">Location</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- SIGNATURE MENU INTERACTION TRIGGER -->
+      <button class="btn-gold-outline" data-action="open-menu" id="header-btn-menu">
+        <span style="font-size: 1.1rem; line-height: 1;">📜</span>
+        VIEW MENU
+      </button>
+      <a href="#reservation" class="btn-gold-outline btn-gold-solid" id="header-btn-reserve">
+        RESERVE TABLE
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTINUOUS SCROLLYTELLING CONTENT CONTAINER
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- 1) HERO — DESERT AWAKENING -->
+    <section class="hero-section" id="hero">
+      <div class="hero-emblem-wrap">
+        <img src="images/rajasthani-mascot-transparent.png" alt="Rajasthani Tadka Royal Crest with Turban and Moustache" width="240" height="240">
+      </div>
+
+      <h1 class="hero-hindi-headline">स्वाद जो राजस्थान से आया है</h1>
+      <p class="hero-subline">An authentic taste of Rajasthan.</p>
+
+      <div class="hero-actions">
+        <a href="#journey" class="btn-gold-outline">
+          EXPLORE THE TASTE &darr;
+        </a>
+        <button class="btn-gold-outline btn-gold-solid" data-action="open-menu" id="hero-btn-menu">
+          VIEW MENU
+        </button>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>SCROLL TO JOURNEY</span>
+        <div class="scroll-pill">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) THE SCROLL JOURNEY & 3) BRAND INTRODUCTION -->
+    <section class="journey-story-track" id="journey">
+      
+      <!-- Stage 1: Desert Awakening -->
+      <article class="journey-stage-card">
+        <span class="journey-stage-step">Stage 01 &bull; Thar Desert</span>
+        <h2 class="journey-stage-title">The Whispering Sands of Marwar</h2>
+        <p class="journey-stage-body">
+          Under the amber glow of the desert sunset, our journey begins where wild Ker berries and Sangri beans thrive amidst undulating dunes, shaped by ancient winds and untamed warrior spirit.
+        </p>
+        <div class="folk-divider">
+          <div class="folk-divider-gem"></div>
+        </div>
+      </article>
+
+      <!-- Stage 2: Village Chopal & Clay Kilns -->
+      <article class="journey-stage-card">
+        <span class="journey-stage-step">Stage 02 &bull; Village Hearth</span>
+        <h2 class="journey-stage-title">Woodfire Embers & Stone Mills</h2>
+        <p class="journey-stage-body">
+          In rural Shekhawati hamlets, the morning rhythm echoes with hand-beaten bajra rotis puffing over clay chulhas, golden cow ghee melting over earthen pots, and hand-pounded Mathania spices filling the crisp air.
+        </p>
+        <div class="folk-divider">
+          <div class="folk-divider-gem"></div>
+        </div>
+      </article>
+
+      <!-- Stage 3: Royal Haveli Facade & Courtyard -->
+      <article class="journey-stage-card">
+        <span class="journey-stage-step">Stage 03 &bull; Royal Court</span>
+        <h2 class="journey-stage-title">The Grand Haveli Threshold</h2>
+        <p class="journey-stage-body">
+          Carved sandstone arches welcome the weary traveller into fragrant courtyards of marigold and rosewater. Here, royal Khansamas historically crafted feasts fit for kings with recipes guarded as royal state secrets.
+        </p>
+        <div class="folk-divider">
+          <div class="folk-divider-gem"></div>
+        </div>
+      </article>
+
+      <!-- Stage 4: Arrival at Rajasthani Tadka -->
+      <article class="journey-stage-card" style="border-color: var(--c-gold);">
+        <span class="journey-stage-step">Stage 04 &bull; Arrival</span>
+        <div style="width: 72px; height: 72px; margin: 0 auto 1.2rem;">
+          <img src="images/logo.svg" alt="Brand Seal Arrival" width="72" height="72">
+        </div>
+        <h2 class="journey-stage-title">RAJASTHANI TADKA</h2>
+        <p class="journey-stage-body">
+          "From the heart of Rajasthan, served with a modern touch." We invite you to step through our threshold and partake in the royal culinary ritual of Mewar and Marwar.
+        </p>
+        <div style="margin-top: 2rem;">
+          <button class="btn-gold-outline btn-gold-solid" data-action="open-menu">
+            OPEN ROYAL MENU
+          </button>
+        </div>
+        <div class="folk-divider">
+          <div class="folk-divider-gem"></div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- 4) FOOD SECTION — "THE TASTE OF RAJASTHAN" (Horizontal Scroll Cards) -->
+    <section class="food-editorial-section" id="taste">
+      <div class="section-header">
+        <span class="section-pre-title">स्वाद की एक परंपरा</span>
+        <h2 class="section-title">THE TASTE OF RAJASTHAN</h2>
+        <p class="section-subtitle">A curated procession of signature delicacies, slow-cooked in pure desi ghee and hand-pounded indigenous spices.</p>
+      </div>
+
+      <!-- Horizontal Editorial Track -->
+      <div class="cards-scroll-outer">
+        <div class="cards-scroll-track" id="editorial-cards-track">
+          <!-- Cards populated dynamically via js/main.js from /api/data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) THAALI EXPERIENCE ("One Thaali. A Journey Through Rajasthan.") -->
+    <section class="thaali-orbit-section" id="thaali-section">
+      <div class="section-header">
+        <span class="section-pre-title">एक थाल, संपूर्ण राजस्थान</span>
+        <h2 class="section-title">ONE THAALI. A JOURNEY THROUGH RAJASTHAN.</h2>
+        <p class="section-subtitle">The royal bronze platter as gravitational center — a symphony of sweet, spicy, tangy, and smoky flavours orbiting in timeless harmony.</p>
+      </div>
+
+      <!-- Gravitational Circular Thaali Stage -->
+      <div class="thaali-stage-wrapper" role="region" aria-label="Interactive Royal Thaali Feast">
+        <div class="thaali-center-tray">
+          <img src="images/royal-thaali.jpg" alt="Overhead view of Royal Rajasthani Brass Thaali Feast">
+        </div>
+        <!-- 8 Satellite Katoris injected dynamically by js/thaali-orbit.js -->
+      </div>
+    </section>
+
+    <!-- 6) RESTAURANT AMBIENCE ("Where Rajasthan Meets the Table") -->
+    <section class="ambience-section" id="ambience">
+      <div class="section-header">
+        <span class="section-pre-title">वातावरण एवं अनुभव</span>
+        <h2 class="section-title">WHERE RAJASTHAN MEETS THE TABLE</h2>
+        <p class="section-subtitle">Dine amidst warm candlelit archways, live woodfire chulhas, and authentic hand-painted Mewari frescoes.</p>
+      </div>
+
+      <div class="ambience-grid">
+        <div class="ambience-card" data-idx="0" tabindex="0" role="button" aria-label="View photo of Table Area">
+          <div class="ambience-card-crest">
+            <span class="ambience-crest-badge">०१ • प्रांगण</span>
+            <span class="ambience-zoom-hint" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </div>
+          <div class="ambience-img-wrapper">
+            <img src="images/WhatsApp_Image_2026-09-20_at_00.42.12.jpeg" alt="Table Area" class="ambience-img" loading="lazy" onerror="this.src='images/haveli-courtyard.jpg'">
+          </div>
+          <div class="ambience-card-overlay">
+            <span class="ambience-tag-micro">HAVELI VIGNETTE</span>
+            <h3 class="ambience-card-title">Table Area</h3>
+            <p class="ambience-card-caption">Dining under ambient lantern light in a restored palace setting.</p>
+          </div>
+        </div>
+
+        <div class="ambience-card" data-idx="1" tabindex="0" role="button" aria-label="View photo of The lighting">
+          <div class="ambience-card-crest">
+            <span class="ambience-crest-badge">०२ • रोशनी</span>
+            <span class="ambience-zoom-hint" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </div>
+          <div class="ambience-img-wrapper">
+            <img src="images/WhatsApp_Image_2026-09-20_at_00.42.12_(1).jpeg" alt="The lighting" class="ambience-img" loading="lazy" onerror="this.src='images/woodfire-kiln.jpg'">
+          </div>
+          <div class="ambience-card-overlay">
+            <span class="ambience-tag-micro">HAVELI VIGNETTE</span>
+            <h3 class="ambience-card-title">The Lighting</h3>
+            <p class="ambience-card-caption">Lighting in a modern aura with authentic Rajasthani craft.</p>
+          </div>
+        </div>
+
+        <div class="ambience-card" data-idx="2" tabindex="0" role="button" aria-label="View photo of The Potter's Art">
+          <div class="ambience-card-crest">
+            <span class="ambience-crest-badge">०३ • कुंभकार</span>
+            <span class="ambience-zoom-hint" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </div>
+          <div class="ambience-img-wrapper">
+            <img src="images/potter-craft.jpg" alt="The Potter's Art" class="ambience-img" loading="lazy">
+          </div>
+          <div class="ambience-card-overlay">
+            <span class="ambience-tag-micro">HERITAGE CRAFT</span>
+            <h3 class="ambience-card-title">The Potter's Art</h3>
+            <p class="ambience-card-caption">Every clay matka and hand-thrown kulhad is shaped by local rural artisans.</p>
+          </div>
+        </div>
+
+        <div class="ambience-card" data-idx="3" tabindex="0" role="button" aria-label="View photo of Folk Art Murals">
+          <div class="ambience-card-crest">
+            <span class="ambience-crest-badge">०४ • भित्तिचित्र</span>
+            <span class="ambience-zoom-hint" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </div>
+          <div class="ambience-img-wrapper">
+            <img src="images/story-art.jpg" alt="Folk Art Murals" class="ambience-img" loading="lazy">
+          </div>
+          <div class="ambience-card-overlay">
+            <span class="ambience-tag-micro">HERITAGE CRAFT</span>
+            <h3 class="ambience-card-title">Folk Art Murals</h3>
+            <p class="ambience-card-caption">Hand-painted frescoes depicting royal processions and Mewari hospitality.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact Footer Status Bar -->
+      <div class="ambience-footer-bar">
+        <div class="ambience-bar-label">
+          <span>✦ राजसी हवेली वातावरण</span>
+          <span style="opacity: 0.5;">•</span>
+          <span>4 CURATED VIGNETTES</span>
+        </div>
+        <div class="ambience-bar-hint">
+          <span>Click any frame to view in full resolution</span>
+        </div>
+      </div>
+
+      <!-- Royal Ambience Lightbox Modal -->
+      <div id="ambience-lightbox" class="ambience-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="ambience-lightbox-content">
+          <button type="button" class="ambience-lightbox-close" id="ambience-lightbox-close" aria-label="Close fullscreen view">✕</button>
+          <button type="button" class="ambience-lightbox-nav ambience-lightbox-prev" id="ambience-lightbox-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="ambience-lightbox-nav ambience-lightbox-next" id="ambience-lightbox-next" aria-label="Next image">›</button>
+          <div class="ambience-lightbox-img-wrap">
+            <img id="ambience-lightbox-img" class="ambience-lightbox-img" src="" alt="Full Ambience View">
+          </div>
+          <div class="ambience-lightbox-details">
+            <div>
+              <h3 id="ambience-lightbox-title" class="ambience-lightbox-title"></h3>
+              <p id="ambience-lightbox-caption" class="ambience-lightbox-caption"></p>
+            </div>
+            <div style="font-family: var(--font-hindi); font-size: 0.9rem; color: var(--c-gold); white-space: nowrap;">
+              राजस्थानी हवेली दर्शन
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) ROYAL REVIEWS & CHRONICLES ("Voices of the Royals") -->
+    <section class="reviews-section culture-section" id="reviews">
+      <div class="section-header">
+        <span class="section-pre-title">शाही प्रशंसा एवं अतिथि अनुभव</span>
+        <h2 class="section-title">VOICES OF THE ROYALS</h2>
+        <p class="section-subtitle">Heartfelt reflections, accolades, and culinary tributes from esteemed diners, connoisseurs, and desert travellers who have feasted at Rajasthani Tadka.</p>
+      </div>
+
+      <!-- Trust & Overall Rating Bar -->
+      <!-- Trust & Overall Rating Bar -->
+      <div class="reviews-trust-banner">
+        <div class="reviews-rating-summary">
+          <div class="rating-big-score">4.8</div>
+          <div class="rating-meta">
+            <div class="rating-stars" aria-label="4.8 out of 5 stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <div class="rating-count-text">4.8 ★ 532 Google Reviews &bull; ₹200–400</div>
+          </div>
+        </div>
+
+        <div class="reviews-awards-wrap">
+          <div class="award-chip">
+            <span class="award-icon">⭐</span>
+            <div class="award-info">
+              <span class="award-name">Google Verified Business</span>
+              <span class="award-year">4.8 ★ (532 Customer Reviews)</span>
+            </div>
+          </div>
+          <div class="award-divider"></div>
+          <div class="award-chip">
+            <span class="award-icon">👑</span>
+            <div class="award-info">
+              <span class="award-name">Royal Taste &bull; Desi Vibes</span>
+              <span class="award-year">Near Rachit Hospital, Daudpur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-actions-cluster">
+          <button class="btn-gold-outline btn-gold-solid btn-slide-toggle" id="btn-toggle-reviews" aria-expanded="false" aria-controls="reviews-sliding-drawer">
+            <span class="toggle-icon">📜</span>
+            <span class="toggle-label">SLIDE OPEN REVIEWS</span>
+            <span class="toggle-chevron">&darr;</span>
+          </button>
+          <button class="btn-gold-outline" id="btn-open-review-dialog">
+            <span style="font-size: 1.05rem;">✍️</span> SHARE EXPERIENCE
+          </button>
+        </div>
+      </div>
+
+      <!-- Sliding Royal Drawer / Expandable Container -->
+      <div class="reviews-sliding-drawer" id="reviews-sliding-drawer">
+        <div class="reviews-sliding-inner">
+
+          <!-- Category Filter Pills inside sliding container -->
+          <div class="reviews-filter-bar" role="tablist" aria-label="Filter reviews by category">
+            <button class="review-filter-pill is-active" data-filter="all" role="tab" aria-selected="true">All Reviews (532+)</button>
+            <button class="review-filter-pill" data-filter="thaali" role="tab" aria-selected="false">Royal Thalis</button>
+            <button class="review-filter-pill" data-filter="curries" role="tab" aria-selected="false">Traditional Curries</button>
+            <button class="review-filter-pill" data-filter="celebrations" role="tab" aria-selected="false">Family Dining</button>
+            <button class="review-filter-pill" data-filter="ambience" role="tab" aria-selected="false">Heritage Ambience</button>
+          </div>
+
+          <!-- Carousel Slider Container with Royal Controls -->
+          <div class="reviews-slider-stage">
+            <!-- Navigation Sliding Arrows -->
+            <button class="reviews-arrow reviews-arrow-prev" id="reviews-arrow-prev" aria-label="Slide previous reviews">
+              <span>&#x2039;</span>
+            </button>
+            <button class="reviews-arrow reviews-arrow-next" id="reviews-arrow-next" aria-label="Slide next reviews">
+              <span>&#x203A;</span>
+            </button>
+
+            <!-- Horizontal Sliding Track -->
+            <div class="reviews-slider-track" id="reviews-slider-track">
+              <!-- Review Card 1: Satrughan Shukla -->
+              <article class="review-card culture-card" data-category="celebrations">
+                <span class="review-watermark-quote" aria-hidden="true">“</span>
+                <div class="review-card-top">
+                  <div class="review-card-stars" aria-label="5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span class="review-badge">✓ Google Verified Review</span>
+                </div>
+                <h3 class="review-card-title">Service Staff Was Very Coordinative and Customer Friendly</h3>
+                <p class="review-card-body">"Service staff was very coordinative and customer friendly. Food quality was great and the staff made sure we had a wonderful dining experience. Must visit with family!"</p>
+                <div class="review-card-footer">
+                  <div class="reviewer-avatar-seal" aria-hidden="true">SS</div>
+                  <div class="reviewer-info">
+                    <span class="reviewer-name">Satrughan Shukla</span>
+                    <span class="reviewer-designation">Gorakhpur Patron &bull; 5 Reviews</span>
+                    <span class="reviewer-occasion">Google Review &bull; ★★★★★ &bull; 1 month ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Review Card 2: Atharv Chaturvedi -->
+              <article class="review-card culture-card" data-category="thaali">
+                <span class="review-watermark-quote" aria-hidden="true">“</span>
+                <div class="review-card-top">
+                  <div class="review-card-stars" aria-label="5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span class="review-badge">👑 Authentic Taste</span>
+                </div>
+                <h3 class="review-card-title">The Food Here is Fantastic, Love the Taste!</h3>
+                <p class="review-card-body">"The food here is Fantastic. Love the taste and the staff was also very cooperative and well behaved👍 Best authentic taste and royal flavours in town."</p>
+                <div class="review-card-footer">
+                  <div class="reviewer-avatar-seal" aria-hidden="true">AC</div>
+                  <div class="reviewer-info">
+                    <span class="reviewer-name">Atharv Chaturvedi</span>
+                    <span class="reviewer-designation">Gorakhpur &bull; 4 Reviews</span>
+                    <span class="reviewer-occasion">Google Review &bull; ★★★★★ &bull; 5 months ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Review Card 3: Anurag Dewan -->
+              <article class="review-card culture-card" data-category="ambience">
+                <span class="review-watermark-quote" aria-hidden="true">“</span>
+                <div class="review-card-top">
+                  <div class="review-card-stars" aria-label="5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span class="review-badge">✨ Clean &amp; Welcoming</span>
+                </div>
+                <h3 class="review-card-title">Delicious, Fresh Food with Clean Ambience</h3>
+                <p class="review-card-body">"The food was very tasty, delicious and fresh and the ambience was very nice and clean.👍👍👍👍👍 Do visit if you are around Indranagar and Daudpur."</p>
+                <div class="review-card-footer">
+                  <div class="reviewer-avatar-seal" aria-hidden="true">AD</div>
+                  <div class="reviewer-info">
+                    <span class="reviewer-name">Anurag Dewan</span>
+                    <span class="reviewer-designation">Local Guide &bull; 2 Reviews</span>
+                    <span class="reviewer-occasion">Google Review &bull; ★★★★★ &bull; 3 months ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Review Card 4: W A -->
+              <article class="review-card culture-card" data-category="curries">
+                <span class="review-watermark-quote" aria-hidden="true">“</span>
+                <div class="review-card-top">
+                  <div class="review-card-stars" aria-label="5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span class="review-badge">✓ Local Guide</span>
+                </div>
+                <h3 class="review-card-title">Excellent Service, Great Value ₹200–400</h3>
+                <p class="review-card-body">"Service was excellent and staff behaviour was also excellent. Atmosphere is pleasant. Great value for authentic food at ₹200–400 per person."</p>
+                <div class="review-card-footer">
+                  <div class="reviewer-avatar-seal" aria-hidden="true">WA</div>
+                  <div class="reviewer-info">
+                    <span class="reviewer-name">W A</span>
+                    <span class="reviewer-designation">Local Guide &bull; 4 Reviews &bull; ₹200–400</span>
+                    <span class="reviewer-occasion">Google Local Guide &bull; ★★★★★ &bull; 1 month ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Review Card 5: Vaibhav Tripathi -->
+              <article class="review-card culture-card" data-category="thaali">
+                <span class="review-watermark-quote" aria-hidden="true">“</span>
+                <div class="review-card-top">
+                  <div class="review-card-stars" aria-label="5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span class="review-badge">🏆 Top Reviewer</span>
+                </div>
+                <h3 class="review-card-title">Awesome Food &amp; Authentic Tadka</h3>
+                <p class="review-card-body">"Awesome food with rich authentic flavours! Staff was very courteous and attentive. A great destination for authentic thalis and desi tadka in Daudpur, Gorakhpur."</p>
+                <div class="review-card-footer">
+                  <div class="reviewer-avatar-seal" aria-hidden="true">VT</div>
+                  <div class="reviewer-info">
+                    <span class="reviewer-name">Vaibhav Tripathi</span>
+                    <span class="reviewer-designation">Local Guide &bull; 19 Reviews &bull; 10 Photos</span>
+                    <span class="reviewer-occasion">Google Local Guide &bull; ★★★★★ &bull; 1 month ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Review Card 6: Harsh Sadhan -->
+              <article class="review-card culture-card" data-category="curries">
+                <span class="review-watermark-quote" aria-hidden="true">“</span>
+                <div class="review-card-top">
+                  <div class="review-card-stars" aria-label="5 stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <span class="review-badge">✓ Family Dining</span>
+                </div>
+                <h3 class="review-card-title">Food Taste is Good &amp; Staff is Humble</h3>
+                <p class="review-card-body">"Food taste is good and flavours are traditional. Staff is also very humble and welcoming. Highly recommended for family dining in Bansgaon Colony."</p>
+                <div class="review-card-footer">
+                  <div class="reviewer-avatar-seal" aria-hidden="true">HS</div>
+                  <div class="reviewer-info">
+                    <span class="reviewer-name">Harsh Sadhan</span>
+                    <span class="reviewer-designation">Daudpur Patron &bull; 5 Reviews</span>
+                    <span class="reviewer-occasion">Google Review &bull; ★★★★★ &bull; 5 months ago</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Slider Footer with Navigation Dots and Hint -->
+          <div class="reviews-slider-footer">
+            <div class="reviews-pagination-dots" id="reviews-pagination-dots" role="tablist" aria-label="Review slide pagination">
+              <button class="dot is-active" data-index="0" role="tab" aria-label="Go to review 1"></button>
+              <button class="dot" data-index="1" role="tab" aria-label="Go to review 2"></button>
+              <button class="dot" data-index="2" role="tab" aria-label="Go to review 3"></button>
+              <button class="dot" data-index="3" role="tab" aria-label="Go to review 4"></button>
+              <button class="dot" data-index="4" role="tab" aria-label="Go to review 5"></button>
+              <button class="dot" data-index="5" role="tab" aria-label="Go to review 6"></button>
+            </div>
+            <span class="reviews-swipe-hint">✦ Use arrows or swipe horizontally to explore all royal chronicles ✦</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8) HERITAGE LOCATION & DIRECTIONS ("Find Our Royal Haveli") -->
+    <section class="location-section" id="location">
+      <div class="section-header">
+        <span class="section-pre-title">शाही स्थान एवं दिशा निर्देश</span>
+        <h2 class="section-title">FIND OUR ROYAL HAVELI</h2>
+        <p class="section-subtitle">Bringing authentic royal Rajasthani heritage flavours &amp; cultural dining to Gorakhpur, near Rachit Hospital, Bansgaon Colony, Daudpur.</p>
+      </div>
+
+      <div class="location-container">
+        <!-- Interactive Map / Visual Showcase Card -->
+        <div class="location-map-card">
+          <div class="map-embed-wrapper">
+            <iframe 
+              src="https://maps.google.com/maps?q=Rajasthani%20Tadka%2C%20near%20Rachit%20hospital%2C%20Bansgaon%20Colony%2C%20Daudpur%2C%20Gorakhpur%2C%20Uttar%20Pradesh%20273001&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Rajasthani Tadka Gorakhpur Location Map">
+            </iframe>
+            <div class="map-overlay-badge">
+              <span class="map-pin-pulse">📍</span>
+              <div>
+                <strong>Rajasthani Tadka</strong>
+                <p>Near Rachit Hospital, Bansgaon Colony, Daudpur, Gorakhpur</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-card-footer">
+            <div class="map-coordinates">
+              <span class="coord-label">GPS COORDINATES</span>
+              <span class="coord-value">26.7456° N, 83.3820° E</span>
+            </div>
+            <a href="https://maps.google.com/?q=Rajasthani+Tadka+near+Rachit+hospital+Bansgaon+Colony+Daudpur+Gorakhpur+Uttar+Pradesh+273001" target="_blank" rel="noopener" class="btn-gold-outline btn-map-directions">
+              <span>🧭 GET DIRECTIONS</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Location Information & Concierge Grid -->
+        <div class="location-info-panel">
+          
+          <div class="location-feature-card">
+            <div class="loc-icon-seal">🏛️</div>
+            <div class="loc-feature-details">
+              <h3>Restaurant Location &amp; Address</h3>
+              <p>Near Rachit Hospital, Bansgaon Colony,<br>Daudpur, Gorakhpur, Uttar Pradesh 273001, India</p>
+              <div class="loc-landmark-tag">✦ Landmark: Near Rachit Hospital, Daudpur &bull; Gorakhpur</div>
+            </div>
+          </div>
+
+          <div class="location-feature-card">
+            <div class="loc-icon-seal">⏱️</div>
+            <div class="loc-feature-details">
+              <h3>Dining Timings &amp; Pricing</h3>
+              <div class="timings-row">
+                <span class="timings-badge">Daily Hours</span>
+                <span class="timings-hours">10:00 AM – 11:00 PM</span>
+              </div>
+              <div class="timings-row" style="margin-top: 0.4rem;">
+                <span class="timings-badge">Price Range</span>
+                <span class="timings-hours">₹200 – ₹400 per person</span>
+              </div>
+              <span class="timings-subtext">Open all 7 days (Monday – Sunday) &bull; Dine-in, Takeaway &amp; Delivery</span>
+            </div>
+          </div>
+
+          <div class="location-feature-card">
+            <div class="loc-icon-seal">👑</div>
+            <div class="loc-feature-details">
+              <h3>Reservations &amp; Calling</h3>
+              <p>Comfortable family dining, authentic Rajasthani thalis, and warm service. Contact our team directly:</p>
+              <div class="loc-contact-links">
+                <a href="tel:+918115596663" class="loc-contact-btn">📞 081155 96663</a>
+                <a href="https://www.instagram.com/rajasthani__tadka/" target="_blank" rel="noopener" class="loc-contact-btn">📸 @rajasthani__tadka</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-cta-card">
+            <div>
+              <h4>Planning Your Family Visit?</h4>
+              <p>Authentic Dal Baati Churma, royal thalis, and fresh chulha breads.</p>
+            </div>
+            <a href="#reservation" class="btn-gold-outline btn-gold-solid loc-reserve-jump">
+              BOOK A TABLE &darr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9 & 10) ROYAL INTAKE SECTION (Exact Layout from Reference Photo)
+         ========================================================================= -->
+    <section class="royal-intake-section" id="reservation">
+      <div class="intake-container">
+        
+        <!-- Left Column: Editorial Statement & Contact List -->
+        <div class="intake-brand-col">
+          <div class="intake-culture-kicker">
+            <span class="kicker-dot">✦</span>
+            <span>राजसी आतिथ्य &bull; ROYAL INTAKE</span>
+            <span class="kicker-dot">✦</span>
+          </div>
+
+          <h2 class="intake-display-heading">memorable.</h2>
+
+          <p class="intake-desc">
+            Whether you're visiting for an authentic family thali feast, planning an imperial banquet, or seeking an evening of sitar under starlit Jharokhas, we start every royal feast with a conversation, not an automated transaction.
+          </p>
+
+          <div class="intake-contact-list">
+            <div class="intake-contact-item">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <span class="contact-text">Near Rachit Hospital, Bansgaon Colony, Daudpur, Gorakhpur, Uttar Pradesh 273001</span>
+            </div>
+            <div class="intake-contact-item">
+              <span class="contact-icon" aria-hidden="true">✉️</span>
+              <a href="mailto:padharo@rajasthanitadka.com" class="contact-link">padharo@rajasthanitadka.com</a>
+            </div>
+            <div class="intake-contact-item">
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <a href="tel:+918115596663" class="contact-link">081155 96663</a>
+            </div>
+            <div class="intake-contact-item">
+              <span class="contact-icon" aria-hidden="true">📷</span>
+              <a href="https://www.instagram.com/rajasthani__tadka/" target="_blank" rel="noopener" class="contact-link">@rajasthani__tadka on Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Minimalist Intake Form (Exact Photo Layout) -->
+        <div class="intake-form-col">
+          <form id="royal-intake-form" class="aayam-intake-form">
+            <div class="intake-form-grid">
+              
+              <div class="intake-field">
+                <label for="intake-email">EMAIL</label>
+                <input type="email" id="intake-email" placeholder="yourname@domain.com" required autocomplete="email">
+              </div>
+
+              <div class="intake-field">
+                <label for="intake-name">GUEST / BRAND NAME</label>
+                <input type="text" id="intake-name" placeholder="e.g. Kunwar Pratap Singh" required autocomplete="name">
+              </div>
+
+              <div class="intake-field full-width">
+                <label for="intake-notes">TELL US ABOUT YOUR ROYAL VISIT</label>
+                <textarea id="intake-notes" rows="3" placeholder="Occasion, party size, date preference, or special dietary requirements..."></textarea>
+              </div>
+
+            </div>
+
+            <div class="intake-action-row">
+              <button type="submit" class="aayam-submit-btn">
+                Submit intake form
+              </button>
+            </div>
+
+            <div id="intake-status-box" class="intake-status-box" style="display:none;"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- =========================================================================
+       11) FOOTER (Exact Layout from Reference Photo with Rajasthani Cultural Soul)
+       ========================================================================= -->
+  <footer class="aayam-footer" role="contentinfo">
+    <div class="aayam-footer-container">
+
+      <!-- Top Row: Brand Header & Navigation Grid -->
+      <div class="aayam-footer-top">
+        
+        <!-- Left Brand Block: Logo badge + Devanagari & English title -->
+        <div class="aayam-brand-block">
+          <div class="aayam-logo-badge">
+            <img src="images/rajasthani-mascot-transparent.png" alt="Rajasthani Tadka Emblem" width="40" height="40">
+          </div>
+          <div class="aayam-brand-titles">
+            <span class="aayam-brand-hindi">राजस्थानी तड़का</span>
+            <span class="aayam-brand-sub">TRADITIONAL THALIS &amp; SPICY TADKA</span>
+          </div>
+        </div>
+
+        <!-- Right: Multi-Column Directory (Exactly like reference photo) -->
+        <div class="aayam-nav-grid">
+          
+          <div class="aayam-nav-col">
+            <h4>RESTAURANT</h4>
+            <ul>
+              <li><a href="#journey">The Heritage</a></li>
+              <li><a href="#thaali-section">Royal Thalis</a></li>
+              <li><a href="#ambience">Dining Ambience</a></li>
+              <li><a href="#" data-action="open-menu">Food Menu</a></li>
+              <li><a href="#reviews">Google Reviews (4.8 ★)</a></li>
+            </ul>
+          </div>
+
+          <div class="aayam-nav-col">
+            <h4>CONNECT</h4>
+            <ul>
+              <li><a href="mailto:padharo@rajasthanitadka.com">padharo@rajasthanitadka.com</a></li>
+              <li><a href="https://www.instagram.com/rajasthani__tadka/" target="_blank" rel="noopener">@rajasthani__tadka</a></li>
+              <li><a href="tel:+918115596663">081155 96663</a></li>
+              <li><a href="#reservation">Table Reservation</a></li>
+            </ul>
+          </div>
+
+          <div class="aayam-nav-col">
+            <h4>ORDER ONLINE</h4>
+            <ul>
+              <li><a href="https://www.zomato.com/gorakhpur/rajasthani-tadka-taramandal" target="_blank" rel="noopener">Zomato Gorakhpur &rarr;</a></li>
+              <li><a href="https://www.swiggy.com/city/gorakhpur/rajasthani-tadka-paidleganj" target="_blank" rel="noopener">Swiggy Gorakhpur &rarr;</a></li>
+              <li><a href="admin.html" class="aayam-portal-link">Admin Portal &rarr;</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Middle Row: Pill Tags (Directly from reference photo layout) -->
+      <div class="aayam-tags-row">
+        <span class="aayam-tag-pill">Gorakhpur Heritage Dining</span>
+        <span class="aayam-tag-pill">Near Rachit Hospital, Daudpur</span>
+        <span class="aayam-tag-pill">4.8 ★ 532 Google Reviews</span>
+        <span class="aayam-tag-pill">100% Shudh Desi Ghee</span>
+        <span class="aayam-tag-pill">₹200–400 per person</span>
+        <span class="aayam-tag-pill">10:00 AM – 11:00 PM Daily</span>
+      </div>
+
+      <!-- Bottom Meta Row: Copyright & Editorial Philosophy -->
+      <div class="aayam-footer-meta">
+        <div class="meta-left">
+          &copy; RAJASTHANI TADKA &mdash; The Royal Haveli. All rights reserved.
+        </div>
+        <div class="meta-right">
+          Flavours that people remember, not meals that fade in a moment.
+        </div>
+      </div>
+
+      <!-- Large Prominent Gold Italic Statement -->
+      <div class="aayam-footer-quote">
+        RAJASTHANI TADKA &mdash; The Royal Haveli. Let's turn your feast into a royal memory.
+      </div>
+
+    </div>
+
+    <!-- Floating Audio / Ambient Music Widget (Bottom Left, like in reference photo) -->
+    <div class="floating-music-widget" id="music-widget" role="region" aria-label="Royal Rajasthani Folk Music Player">
+      <audio id="kesariya-audio" src="audio/kesariya-balam.mp3" preload="auto" loop></audio>
+      <button class="music-play-btn" id="music-toggle-btn" aria-label="Play Kesariya Balam traditional folk music" title="Play Kesariya Balam (केसरिया बालम)">
+        <svg id="music-icon-play" width="14" height="14" viewBox="0 0 24 24" fill="#DFBA6E">
+          <polygon points="6 4 20 12 6 20 6 4"></polygon>
+        </svg>
+        <svg id="music-icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="#DFBA6E" style="display: none;">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+      </button>
+      <div class="music-info">
+        <div class="music-title">
+          <span>केसरिया बालम</span>
+          <span class="music-sep">•</span>
+          <span>Kesariya Balam</span>
+        </div>
+        <div class="music-sub" id="music-status-text">Traditional Rajasthani Folk Song • पधारो म्हारे देश</div>
+      </div>
+      <div class="music-equalizer" id="music-equalizer" aria-hidden="true" title="Audio Playing">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <!-- Discreet Floating Admin Access Pill (Bottom Right) -->
+  <a href="admin.html" class="floating-admin-badge" title="Royal Admin CMS" style="position: fixed; bottom: 24px; right: 24px; z-index: 999; background: rgba(18,14,12,0.92); border: 1px solid rgba(198,154,72,0.45); padding: 0.5rem 1rem; border-radius: 24px; font-size: 0.78rem; color: #DFBA6E; text-decoration: none; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.65); font-family: var(--font-sans); letter-spacing: 0.05em; transition: all 0.3s ease;">
+    <span>👑</span> Admin CMS
+  </a>
+
+  <!-- =========================================================================
+       8) SIGNATURE HAVELI DOORS MENU OVERLAY (Signature Cinematic Interaction)
+       ========================================================================= -->
+  <aside id="menu-overlay-container" aria-label="Royal Haveli Menu Experience">
+    
+    <!-- Left Sliding Door Panel -->
+    <div class="haveli-door-panel haveli-door-left">
+      <div class="door-inner-texture"></div>
+      <div class="door-inner-jali">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="rgba(198, 154, 72, 0.4)" stroke-width="1.5">
+          <circle cx="50" cy="50" r="45"/>
+          <path d="M50 5 L50 95 M5 50 L95 50"/>
+          <circle cx="50" cy="50" r="25"/>
+          <rect x="25" y="25" width="50" height="50" transform="rotate(45 50 50)"/>
+        </svg>
+      </div>
+      <div class="door-brass-knocker"></div>
+    </div>
+
+    <!-- Right Sliding Door Panel -->
+    <div class="haveli-door-panel haveli-door-right">
+      <div class="door-inner-texture"></div>
+      <div class="door-inner-jali">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="rgba(198, 154, 72, 0.4)" stroke-width="1.5">
+          <circle cx="50" cy="50" r="45"/>
+          <path d="M50 5 L50 95 M5 50 L95 50"/>
+          <circle cx="50" cy="50" r="25"/>
+          <rect x="25" y="25" width="50" height="50" transform="rotate(45 50 50)"/>
+        </svg>
+      </div>
+      <div class="door-brass-knocker"></div>
+    </div>
+
+    <!-- Golden Light Beam Sweeper -->
+    <div class="light-beam-sweep" aria-hidden="true"></div>
+
+    <!-- Midpoint Royal Seal Reveal -->
+    <div id="midpoint-royal-seal" aria-hidden="true">
+      <img src="images/logo.svg" alt="Rajasthani Tadka Royal Seal" width="140" height="140">
+    </div>
+
+    <!-- The Luxury Menu Environment Inside Haveli -->
+    <div class="menu-interior-environment">
+      <div class="menu-env-bg-layer"></div>
+
+      <!-- Menu Header -->
+      <div class="menu-header-bar">
+        <div class="menu-brand-seal-badge">
+          <img src="images/logo.svg" alt="Rajasthani Tadka Seal">
+          <div>
+            <h2 style="font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 0.15em; color: var(--c-sand-light);">
+              RAJASTHANI TADKA
+            </h2>
+            <p style="font-family: var(--font-hindi); font-size: 0.85rem; color: var(--c-gold);">
+              स्वाद की एक यात्रा &bull; Traditional flavours, served with a modern touch.
+            </p>
+          </div>
+        </div>
+
+        <button class="btn-close-manuscript" aria-label="Close Menu">
+          <span>&times;</span> Close Manuscript
+        </button>
+      </div>
+
+      <!-- Chapter / Category Navigation Tabs -->
+      <nav class="menu-chapter-tabs" aria-label="Menu Chapters">
+        <button class="chapter-tab-btn is-active" data-category="thaali">
+          <span>👑</span> The Royal Thaali
+        </button>
+        <button class="chapter-tab-btn" data-category="specialities">
+          <span>✨</span> Rajasthani Specialities
+        </button>
+        <button class="chapter-tab-btn" data-category="breads">
+          <span>🌾</span> Chulha Breads
+        </button>
+        <button class="chapter-tab-btn" data-category="mains">
+          <span>🥘</span> Main Course
+        </button>
+        <button class="chapter-tab-btn" data-category="desserts">
+          <span>🍯</span> Royal Desserts
+        </button>
+        <button class="chapter-tab-btn" data-category="beverages">
+          <span>🏺</span> Beverages & Chaas
+        </button>
+      </nav>
+
+      <!-- Dynamic Dishes Grid Inside Menu -->
+      <div class="menu-dishes-grid">
+        <!-- Rendered by js/menu-experience.js -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       DISH DETAIL INTERACTION MODAL (<dialog> with @starting-style & Spice Drift)
+       ========================================================================= -->
+  <dialog id="dish-detail-dialog" aria-labelledby="dialog-dish-name">
+    <div class="dialog-content-layout">
+      <!-- Dish Photography Pane with Spice Particles Drift -->
+      <div class="dialog-img-pane">
+        <img src="" alt="" class="dialog-dish-img">
+        <canvas class="dialog-spice-canvas" aria-hidden="true"></canvas>
+      </div>
+
+      <!-- Dish Editorial Info Pane -->
+      <div class="dialog-info-pane">
+        <button class="dialog-close-btn" aria-label="Close Dish Details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="dialog-dish-header">
+          <h3 id="dialog-dish-name" class="dialog-dish-name"></h3>
+          <div class="dialog-dish-hindi"></div>
+        </div>
+
+        <div class="dialog-badges-row"></div>
+
+        <p class="dialog-dish-desc"></p>
+
+        <div class="ingredients-title">Traditional Recipe Ingredients</div>
+        <div class="ingredients-pills"></div>
+
+        <div class="dialog-dish-footer">
+          <div>
+            <span style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--c-sand-muted); display: block;">
+              Price Per Portion
+            </span>
+            <span class="dialog-price"></span>
+          </div>
+
+          <a href="#reservation" class="btn-gold-outline btn-gold-solid" onclick="document.getElementById('dish-detail-dialog').close();">
+            RESERVE TO TASTE
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       SUBMIT ROYAL REVIEW MODAL DIALOG
+       ========================================================================= -->
+  <dialog id="add-review-dialog" aria-labelledby="review-dialog-title" aria-modal="true">
+    <div class="review-dialog-header">
+      <h3 id="review-dialog-title">SHARE YOUR ROYAL EXPERIENCE</h3>
+      <button class="dialog-close-btn" id="review-dialog-close" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="review-dialog-body">
+      <form id="royal-review-form">
+        <div style="margin-bottom: 1.2rem;">
+          <label style="font-family: var(--font-serif); font-size: 0.95rem; color: var(--c-gold-bright); display: block; margin-bottom: 0.4rem;">
+            Your Royal Rating
+          </label>
+          <div class="star-rating-picker" id="star-picker" role="radiogroup" aria-label="Select star rating">
+            <span class="picker-star is-selected" data-rating="1" role="radio" aria-checked="false" tabindex="0">★</span>
+            <span class="picker-star is-selected" data-rating="2" role="radio" aria-checked="false" tabindex="0">★</span>
+            <span class="picker-star is-selected" data-rating="3" role="radio" aria-checked="false" tabindex="0">★</span>
+            <span class="picker-star is-selected" data-rating="4" role="radio" aria-checked="false" tabindex="0">★</span>
+            <span class="picker-star is-selected" data-rating="5" role="radio" aria-checked="true" tabindex="0">★</span>
+          </div>
+          <input type="hidden" id="review-rating-input" name="rating" value="5">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem;">
+          <div class="form-group">
+            <label for="review-guest-name">Your Full Name *</label>
+            <input type="text" id="review-guest-name" name="name" required placeholder="e.g. Vikramaditya Rathore">
+          </div>
+          <div class="form-group">
+            <label for="review-guest-city">City / Designation *</label>
+            <input type="text" id="review-guest-city" name="city" required placeholder="e.g. Gorakhpur / Food Lover">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem;">
+          <div class="form-group">
+            <label for="review-category">Feast Category</label>
+            <select id="review-category" name="category">
+              <option value="thaali">Royal Thaali Feasts</option>
+              <option value="curries">Dal Baati & Curries</option>
+              <option value="celebrations">Celebrations & Banquets</option>
+              <option value="ambience">Heritage Ambience</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="review-dish">Favourite Dish</label>
+            <input type="text" id="review-dish" name="dish" placeholder="e.g. Dal Baati Churma, Laal Maas">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+          <label for="review-title">Review Headline *</label>
+          <input type="text" id="review-title" name="title" required placeholder="e.g. A Feast Fit for Kings!">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.6rem;">
+          <label for="review-body">Describe Your Royal Dining Experience *</label>
+          <textarea id="review-body" name="body" rows="4" required placeholder="Share your reflections on the flavours, hospitality, and desert ambience..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-gold-outline btn-gold-solid" style="width: 100%; padding: 1.1rem; font-size: 1rem; cursor: pointer;">
+          SUBMIT ROYAL REVIEW
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Royal Toast Notification -->
+  <div id="review-toast" class="review-toast" role="status" aria-live="polite">
+    <span style="font-size: 1.6rem;">👑</span>
+    <span id="review-toast-text">खम्मा घणी! Your royal review has been inscribed into our chronicles.</span>
+  </div>
+
+  <!-- =========================================================================
+       SCRIPTS
+       ========================================================================= -->
+  <script src="js/scrollytelling.js?v=3.2"></script>
+  <script src="js/thaali-orbit.js"></script>
+  <script src="js/menu-experience.js"></script>
+  <script src="js/reservations.js"></script>
+  <script src="js/main.js?v=2.3"></script>
+</body>
+</html>
