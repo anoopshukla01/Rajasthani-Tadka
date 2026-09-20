@@ -356,14 +356,19 @@ class TadkaRequestHandler(http.server.SimpleHTTPRequestHandler):
     })
 
 def run_server():
+    socketserver.TCPServer.allow_reuse_address = True
+    is_cloud_env = "PORT" in os.environ
     current_port = PORT
-    for attempt in range(5):
+    max_attempts = 1 if is_cloud_env else 5
+    
+    for attempt in range(max_attempts):
         try:
             with socketserver.TCPServer(("", current_port), TadkaRequestHandler) as httpd:
-                print(f"🌟 Rajasthani Tadka server running at http://127.0.0.1:{current_port}/")
+                print(f"🌟 Rajasthani Tadka server running at http://0.0.0.0:{current_port}/")
                 httpd.serve_forever()
         except OSError as e:
-            if e.errno == 48: # Address already in use
+            # 48 on macOS, 98 on Linux (EADDRINUSE)
+            if e.errno in (48, 98) and not is_cloud_env:
                 print(f"Port {current_port} is busy, trying {current_port + 1}...")
                 current_port += 1
             else:

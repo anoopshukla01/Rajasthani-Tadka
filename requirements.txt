@@ -1,0 +1,2 @@
+# Rajasthani Tadka dependencies
+# Uses Python 3 standard library (http.server, socketserver, json, etc.)
